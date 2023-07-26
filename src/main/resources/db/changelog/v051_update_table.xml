@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="modify_table_vk_wall_comment" author="ostapova.a">
+        <renameTable oldTableName="vk_user" newTableName="user_info"/>
+        <renameColumn tableName="user_info" oldColumnName="photo50" newColumnName="photo_size50"/>
+        <renameColumn tableName="user_info" oldColumnName="user_id" newColumnName="id"/>
+        <modifyDataType tableName="user_info" columnName="id" newDataType="bigint"/>
+        <addColumn tableName="user_info">
+            <column name="vk_id"
+            type="integer"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

@@ -1,14 +1,5 @@
 package tg.bot.activity.api.telegram.handler.impl;
 
-import com.bot.sup.api.telegram.handler.Handle;
-import com.bot.sup.common.enums.CallbackEnum;
-import com.bot.sup.common.properties.TelegramProperties;
-import com.bot.sup.common.properties.message.ActivityMessageProperties;
-import com.bot.sup.common.properties.message.InstructorMessageProperties;
-import com.bot.sup.common.properties.message.MainMessageProperties;
-import com.bot.sup.common.properties.message.ScheduleMessageProperties;
-import com.bot.sup.model.entity.SelectedSchedule;
-import com.bot.sup.repository.SelectedScheduleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +9,15 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.api.objects.webapp.WebAppInfo;
+import tg.bot.activity.api.telegram.handler.Handle;
+import tg.bot.activity.common.enums.CallbackEnum;
+import tg.bot.activity.common.properties.TelegramProperties;
+import tg.bot.activity.common.properties.message.ActivityMessageProperties;
+import tg.bot.activity.common.properties.message.InstructorMessageProperties;
+import tg.bot.activity.common.properties.message.MainMessageProperties;
+import tg.bot.activity.common.properties.message.ScheduleMessageProperties;
+import tg.bot.activity.model.entity.SelectedSchedule;
+import tg.bot.activity.repository.SelectedScheduleRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +26,7 @@ import java.util.Optional;
 @Component
 @RequiredArgsConstructor
 public class HandleMainMenuImpl implements Handle {
+
     private final SelectedScheduleRepository selectedScheduleRepository;
     private final MainMessageProperties mainMessageProperties;
     private final ActivityMessageProperties activityMessageProperties;

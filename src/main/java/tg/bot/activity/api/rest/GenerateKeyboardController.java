@@ -1,15 +1,21 @@
 package tg.bot.activity.api.rest;
 
-import com.bot.sup.service.GenerateKeyboard;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import tg.bot.activity.service.GenerateKeyboard;
 
 @CrossOrigin("*")
 @RestController
 @RequestMapping("/keyboard")
 @RequiredArgsConstructor
 public class GenerateKeyboardController {
+
     private final GenerateKeyboard generateKeyboard;
 
     @GetMapping("/message/{telegramId}")

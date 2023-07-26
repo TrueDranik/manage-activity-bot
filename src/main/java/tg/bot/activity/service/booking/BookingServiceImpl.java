@@ -1,20 +1,20 @@
 package tg.bot.activity.service.booking;
 
-import com.bot.sup.common.enums.PaymentStatusEnum;
-import com.bot.sup.exception.NotEnoughFreePlacesException;
-import com.bot.sup.mapper.BookingMapper;
-import com.bot.sup.model.dto.tg.BookingCreateDto;
-import com.bot.sup.model.dto.tg.BookingDto;
-import com.bot.sup.model.dto.tg.BookingUpdateDto;
-import com.bot.sup.model.entity.Booking;
-import com.bot.sup.model.entity.Client;
-import com.bot.sup.model.entity.Schedule;
-import com.bot.sup.repository.BookingRepository;
-import com.bot.sup.repository.ClientRepository;
-import com.bot.sup.repository.ScheduleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import tg.bot.activity.common.enums.PaymentStatusEnum;
+import tg.bot.activity.exception.NotEnoughFreePlacesException;
+import tg.bot.activity.mapper.BookingMapper;
+import tg.bot.activity.model.dto.tg.BookingCreateDto;
+import tg.bot.activity.model.dto.tg.BookingDto;
+import tg.bot.activity.model.dto.tg.BookingUpdateDto;
+import tg.bot.activity.model.entity.Booking;
+import tg.bot.activity.model.entity.Client;
+import tg.bot.activity.model.entity.Schedule;
+import tg.bot.activity.repository.BookingRepository;
+import tg.bot.activity.repository.ClientRepository;
+import tg.bot.activity.repository.ScheduleRepository;
 
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.OptimisticLockException;
@@ -26,11 +26,10 @@ import java.util.Objects;
 @Service
 @RequiredArgsConstructor
 public class BookingServiceImpl implements BookingService {
+
     private final BookingMapper bookingMapper;
     private final BookingRepository bookingRepository;
-
     private final ScheduleRepository scheduleRepository;
-
     private final ClientRepository clientRepository;
 
     @Override
@@ -105,6 +104,7 @@ public class BookingServiceImpl implements BookingService {
             throw new NotEnoughFreePlacesException("Not enough free places");
         }
     }
+
     private void UpdateAmountFreePlacesInSchedule(Schedule schedule, int updatedFrePlaces) {
         try {
             schedule.setAmountFreePlaces(updatedFrePlaces);
@@ -133,6 +133,4 @@ public class BookingServiceImpl implements BookingService {
     public Integer getAmountBookedPlacesByActivity(Long id) {
         return bookingRepository.getCountBookedPlacesByActivityId(id);
     }
-
-
 }

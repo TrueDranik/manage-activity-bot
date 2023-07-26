@@ -1,18 +1,17 @@
 package tg.bot.activity.mapper;
 
-import com.bot.sup.model.dto.tg.BookingCreateDto;
-import com.bot.sup.model.dto.tg.BookingDto;
-import com.bot.sup.model.dto.tg.BookingUpdateDto;
-import com.bot.sup.model.dto.tg.ClientCreateDto;
-import com.bot.sup.model.entity.Booking;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import tg.bot.activity.model.dto.tg.BookingCreateDto;
+import tg.bot.activity.model.dto.tg.BookingDto;
+import tg.bot.activity.model.dto.tg.BookingUpdateDto;
+import tg.bot.activity.model.dto.tg.ClientCreateDto;
+import tg.bot.activity.model.entity.Booking;
 
 import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface BookingMapper extends BaseMapper<Booking, BookingDto> {
-
 
     @Override
     List<BookingDto> domainsToDtos(List<Booking> domains);

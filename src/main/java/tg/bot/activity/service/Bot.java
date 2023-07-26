@@ -1,12 +1,5 @@
 package tg.bot.activity.service;
 
-import com.bot.sup.api.telegram.command.BaseCommand;
-import com.bot.sup.api.telegram.handler.registration.StateContext;
-import com.bot.sup.cache.UserStateCache;
-import com.bot.sup.common.CallbackMap;
-import com.bot.sup.common.properties.TelegramProperties;
-import com.bot.sup.model.UserState;
-import com.bot.sup.service.callbackquery.Callback;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
@@ -25,6 +18,13 @@ import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.commands.BotCommand;
 import org.telegram.telegrambots.meta.api.objects.commands.scope.BotCommandScopeDefault;
+import tg.bot.activity.api.telegram.command.BaseCommand;
+import tg.bot.activity.api.telegram.handler.registration.StateContext;
+import tg.bot.activity.cache.UserStateCache;
+import tg.bot.activity.common.CallbackMap;
+import tg.bot.activity.common.properties.TelegramProperties;
+import tg.bot.activity.model.UserState;
+import tg.bot.activity.service.callbackquery.Callback;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
@@ -35,6 +35,7 @@ import java.util.Objects;
 @EnableCaching
 @RequiredArgsConstructor
 public class Bot extends TelegramLongPollingBot {
+
     private final CallbackMap callbackMap;
     private final StateContext stateContext;
     private final UserStateCache userStateCache;

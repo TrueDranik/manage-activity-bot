@@ -1,22 +1,23 @@
 package tg.bot.activity.api.telegram.handler.registration.activity.type.states;
 
-import com.bot.sup.common.enums.CallbackEnum;
-import com.bot.sup.common.enums.states.ActivityTypeStateEnum;
-import com.bot.sup.common.properties.message.ActivityMessageProperties;
-import com.bot.sup.common.properties.message.MainMessageProperties;
-import com.bot.sup.model.entity.ActivityType;
-import com.bot.sup.service.MessageService;
-import com.bot.sup.service.activity.type.impl.ActivityTypeServiceImpl;
-import com.bot.sup.util.KeyboardUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import tg.bot.activity.common.enums.CallbackEnum;
+import tg.bot.activity.common.enums.states.ActivityTypeStateEnum;
+import tg.bot.activity.common.properties.message.ActivityMessageProperties;
+import tg.bot.activity.common.properties.message.MainMessageProperties;
+import tg.bot.activity.model.entity.ActivityType;
+import tg.bot.activity.service.MessageService;
+import tg.bot.activity.service.activity.type.impl.ActivityTypeServiceImpl;
+import tg.bot.activity.util.KeyboardUtil;
 
 @Component
 @RequiredArgsConstructor
 public class AskTypeNameState implements ActivityTypeMessageProcessor {
+
     private final MessageService messageService;
     private final ActivityTypeServiceImpl activityTypeService;
     private final MainMessageProperties mainMessageProperties;

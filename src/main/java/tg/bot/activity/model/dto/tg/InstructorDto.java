@@ -6,6 +6,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class InstructorDto {
+
     private Long id;
     private String firstName;
     private String lastName;

@@ -8,6 +8,7 @@ import lombok.Setter;
 @Setter
 @Schema(title = "Тип активности")
 public class ActivityTypeCreateDto {
+
     @Schema(title = "Именование типа", defaultValue = "Type")
     private String name;
     @Schema(title = "Доп. информация для типа", nullable = true, defaultValue = " ")

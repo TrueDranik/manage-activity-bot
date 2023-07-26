@@ -1,15 +1,15 @@
 package tg.bot.activity.mapper;
 
-import com.bot.sup.common.enums.ParamTypeEnum;
-import com.bot.sup.model.dto.AboutUsDto;
-import com.bot.sup.model.dto.AboutUsUpdateDto;
-import com.bot.sup.model.entity.AboutUs;
-import com.bot.sup.repository.PhotoRepository;
-import com.bot.sup.service.paramVariable.ParamVariableService;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.springframework.beans.factory.annotation.Autowired;
+import tg.bot.activity.common.enums.ParamTypeEnum;
+import tg.bot.activity.model.dto.AboutUsDto;
+import tg.bot.activity.model.dto.AboutUsUpdateDto;
+import tg.bot.activity.model.entity.AboutUs;
+import tg.bot.activity.repository.PhotoRepository;
+import tg.bot.activity.service.paramVariable.ParamVariableService;
 
 @Mapper(componentModel = "spring")
 public abstract class AboutUsMapper implements BaseMapper<AboutUs, AboutUsDto> {

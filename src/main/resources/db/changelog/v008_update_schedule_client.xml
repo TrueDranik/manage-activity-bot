@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
+      http://www.liquibase.org/xml/ns/pro
+      http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
+
+    <changeSet author="alexSmurov" id="1">
+
+        <createTable tableName="schedule_instructor">
+            <column  name="schedule_id"  type="bigint">
+                <constraints  nullable="false" primaryKey="true"/>
+            </column>
+            <column  name="instructor_id"  type="bigint">
+                <constraints  nullable="false" primaryKey="true"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="schedule_client">
+            <column  name="schedule_id"  type="bigint">
+                <constraints  nullable="false" primaryKey="true"/>
+            </column>
+            <column  name="client_id"  type="bigint">
+                <constraints  nullable="false" primaryKey="true"/>
+            </column>
+        </createTable>
+
+
+        <addForeignKeyConstraint baseColumnNames="schedule_id"
+                                 baseTableName="schedule_instructor"
+                                 constraintName="fk_schedule_instructor_schedule_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="schedule"/>
+        <addForeignKeyConstraint baseColumnNames="instructor_id"
+                                 baseTableName="schedule_instructor"
+                                 constraintName="fk_schedule_instructor_instructor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="instructor"/>
+
+        <addForeignKeyConstraint baseColumnNames="schedule_id"
+                                 baseTableName="schedule_client"
+                                 constraintName="fk_schedule_client_schedule_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="schedule"/>
+        <addForeignKeyConstraint baseColumnNames="client_id"
+                                 baseTableName="schedule_client"
+                                 constraintName="fk_schedule_client_client_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="client"/>
+
+
+
+    </changeSet>
+
+</databaseChangeLog>

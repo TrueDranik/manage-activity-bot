@@ -8,6 +8,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class ClientDto {
+
     private Long id;
     private String firstName;
     private String lastName;

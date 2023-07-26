@@ -1,13 +1,5 @@
 package tg.bot.activity.service.callbackquery.impl.schedule;
 
-import com.bot.sup.common.enums.CallbackEnum;
-import com.bot.sup.common.properties.message.MainMessageProperties;
-import com.bot.sup.model.entity.Activity;
-import com.bot.sup.model.entity.ActivityType;
-import com.bot.sup.model.entity.Route;
-import com.bot.sup.model.entity.Schedule;
-import com.bot.sup.service.callbackquery.Callback;
-import com.bot.sup.service.schedule.impl.ScheduleServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.ParseMode;
@@ -18,6 +10,14 @@ import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import tg.bot.activity.common.enums.CallbackEnum;
+import tg.bot.activity.common.properties.message.MainMessageProperties;
+import tg.bot.activity.model.entity.Activity;
+import tg.bot.activity.model.entity.ActivityType;
+import tg.bot.activity.model.entity.Route;
+import tg.bot.activity.model.entity.Schedule;
+import tg.bot.activity.service.callbackquery.Callback;
+import tg.bot.activity.service.schedule.impl.ScheduleServiceImpl;
 
 import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;

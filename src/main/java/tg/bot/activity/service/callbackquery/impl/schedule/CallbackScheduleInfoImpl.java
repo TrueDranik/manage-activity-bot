@@ -1,18 +1,5 @@
 package tg.bot.activity.service.callbackquery.impl.schedule;
 
-import com.bot.sup.api.telegram.handler.impl.HandleScheduleInfoImpl;
-import com.bot.sup.common.enums.CallbackEnum;
-import com.bot.sup.common.enums.PhotoSizeEnum;
-import com.bot.sup.model.entity.Activity;
-import com.bot.sup.model.entity.Photo;
-import com.bot.sup.model.entity.Route;
-import com.bot.sup.model.entity.Schedule;
-import com.bot.sup.model.entity.SelectedSchedule;
-import com.bot.sup.service.callbackquery.AbstracktCallbackHandler;
-import com.bot.sup.service.callbackquery.Callback;
-import com.bot.sup.service.files.photo.PhotoService;
-import com.bot.sup.service.schedule.impl.ScheduleServiceImpl;
-import com.bot.sup.util.ImageUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.ParseMode;
@@ -21,6 +8,19 @@ import org.telegram.telegrambots.meta.api.methods.send.SendPhoto;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.InputFile;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import tg.bot.activity.api.telegram.handler.impl.HandleScheduleInfoImpl;
+import tg.bot.activity.common.enums.CallbackEnum;
+import tg.bot.activity.common.enums.PhotoSizeEnum;
+import tg.bot.activity.model.entity.Activity;
+import tg.bot.activity.model.entity.Photo;
+import tg.bot.activity.model.entity.Route;
+import tg.bot.activity.model.entity.Schedule;
+import tg.bot.activity.model.entity.SelectedSchedule;
+import tg.bot.activity.service.callbackquery.AbstracktCallbackHandler;
+import tg.bot.activity.service.callbackquery.Callback;
+import tg.bot.activity.service.files.photo.PhotoService;
+import tg.bot.activity.service.schedule.impl.ScheduleServiceImpl;
+import tg.bot.activity.util.ImageUtil;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.Optional;
@@ -28,9 +28,11 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class CallbackScheduleInfoImpl extends AbstracktCallbackHandler implements Callback {
+
     private final PhotoService photoService;
     private final ScheduleServiceImpl scheduleService;
     private final HandleScheduleInfoImpl handleScheduleInfo;
+
     private String activityFormatIdFromCallback;
     private String scheduleIdFromCallback;
     private String eventDateFromCallback;

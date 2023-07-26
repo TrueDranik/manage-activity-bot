@@ -1,13 +1,17 @@
 package tg.bot.activity.config;
 
-import com.bot.sup.api.telegram.handler.registration.activity.format.states.ActivityFormatMessageProcessor;
-import com.bot.sup.api.telegram.handler.registration.activity.type.states.ActivityTypeMessageProcessor;
-import com.bot.sup.api.telegram.handler.registration.client.states.ClientRecordMessageProcessor;
-import com.bot.sup.api.telegram.handler.registration.information.states.InformationAboutUsMessageProcessor;
-import com.bot.sup.api.telegram.handler.registration.instructor.states.InstructorMessageProcessor;
-import com.bot.sup.common.enums.states.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import tg.bot.activity.api.telegram.handler.registration.activity.format.states.ActivityFormatMessageProcessor;
+import tg.bot.activity.api.telegram.handler.registration.activity.type.states.ActivityTypeMessageProcessor;
+import tg.bot.activity.api.telegram.handler.registration.client.states.ClientRecordMessageProcessor;
+import tg.bot.activity.api.telegram.handler.registration.information.states.InformationAboutUsMessageProcessor;
+import tg.bot.activity.api.telegram.handler.registration.instructor.states.InstructorMessageProcessor;
+import tg.bot.activity.common.enums.states.ActivityFormatStateEnum;
+import tg.bot.activity.common.enums.states.ActivityTypeStateEnum;
+import tg.bot.activity.common.enums.states.ClientRecordStateEnum;
+import tg.bot.activity.common.enums.states.InformationAboutUsStateEnum;
+import tg.bot.activity.common.enums.states.InstructorStateEnum;
 
 import java.util.List;
 import java.util.Map;
@@ -16,6 +20,7 @@ import java.util.stream.Collectors;
 
 @Configuration
 public class AppConfiguration {
+
     @Bean
     public Map<InstructorStateEnum, InstructorMessageProcessor> instructorMessageProcessorMap(List<InstructorMessageProcessor> processors) {
         return processors.stream()

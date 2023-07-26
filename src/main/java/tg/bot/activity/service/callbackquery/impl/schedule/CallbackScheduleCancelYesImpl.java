@@ -1,11 +1,5 @@
 package tg.bot.activity.service.callbackquery.impl.schedule;
 
-import com.bot.sup.common.enums.CallbackEnum;
-import com.bot.sup.common.properties.message.MainMessageProperties;
-import com.bot.sup.common.properties.message.ScheduleMessageProperties;
-import com.bot.sup.model.entity.Schedule;
-import com.bot.sup.service.callbackquery.Callback;
-import com.bot.sup.service.schedule.impl.ScheduleServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,6 +9,12 @@ import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import tg.bot.activity.common.enums.CallbackEnum;
+import tg.bot.activity.common.properties.message.MainMessageProperties;
+import tg.bot.activity.common.properties.message.ScheduleMessageProperties;
+import tg.bot.activity.model.entity.Schedule;
+import tg.bot.activity.service.callbackquery.Callback;
+import tg.bot.activity.service.schedule.impl.ScheduleServiceImpl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +22,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class CallbackScheduleCancelYesImpl implements Callback {
+
     private final ScheduleServiceImpl scheduleService;
     private final MainMessageProperties mainMessageProperties;
     private final ScheduleMessageProperties scheduleMessageProperties;

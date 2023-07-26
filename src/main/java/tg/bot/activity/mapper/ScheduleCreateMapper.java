@@ -1,16 +1,15 @@
 package tg.bot.activity.mapper;
 
-import com.bot.sup.model.dto.tg.ScheduleCreateDto;
-import com.bot.sup.model.entity.Instructor;
-import com.bot.sup.model.entity.Schedule;
-import com.bot.sup.repository.ActivityRepository;
-import com.bot.sup.repository.InstructorRepository;
-import com.bot.sup.repository.RouteRepository;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.springframework.beans.factory.annotation.Autowired;
+import tg.bot.activity.model.dto.tg.ScheduleCreateDto;
+import tg.bot.activity.model.entity.Schedule;
+import tg.bot.activity.repository.ActivityRepository;
+import tg.bot.activity.repository.InstructorRepository;
+import tg.bot.activity.repository.RouteRepository;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.ArrayList;
@@ -20,6 +19,7 @@ import java.util.Set;
 
 @Mapper(componentModel = "spring")
 public abstract class ScheduleCreateMapper implements BaseMapper<Schedule, ScheduleCreateDto> {
+
     @Autowired
     ActivityRepository activityRepository;
     @Autowired
@@ -60,5 +60,4 @@ public abstract class ScheduleCreateMapper implements BaseMapper<Schedule, Sched
         }
         dto.setInstructorIds(instructorIds);
     }
-
 }

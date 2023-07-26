@@ -8,6 +8,7 @@ import java.net.URI;
 @Getter
 @Setter
 public class VkUserInfoDto {
+
     private long id;
     private int vkId;
     private String firstName;

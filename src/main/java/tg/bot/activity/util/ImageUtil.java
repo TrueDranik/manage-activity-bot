@@ -28,6 +28,7 @@ import java.util.concurrent.ExecutionException;
 
 @Slf4j
 public class ImageUtil {
+
     private ImageUtil() {
         throw new IllegalStateException("Util class");
     }

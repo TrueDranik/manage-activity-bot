@@ -6,9 +6,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ParamVariableDto {
+
     private Long id;
     private String name;
     private String value;
     private String paramType;
-
 }

@@ -1,7 +1,7 @@
 package tg.bot.activity.service.route;
 
-import com.bot.sup.model.dto.tg.RouteDto;
 import org.springframework.stereotype.Service;
+import tg.bot.activity.model.dto.tg.RouteDto;
 
 import java.util.List;
 

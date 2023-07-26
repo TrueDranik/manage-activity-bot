@@ -1,0 +1,75 @@
+telegram:
+  url:
+    constructor: https://tgsupbot-admin-dev.reliab.tech/#/creationSchedule
+    activity: https://tgsupbot-admin-dev.reliab.tech/#/activity
+    updateActivity: https://tgsupbot-admin-dev.reliab.tech/#/updateActivity
+    route: https://tgsupbot-admin-dev.reliab.tech/#/route
+    updateRoute: https://tgsupbot-admin-dev.reliab.tech/#/updateRoute
+    updateSchedule: https://tgsupbot-admin-dev.reliab.tech/#/updateSchedule
+    getClientRecords: https://tgsupbot-admin-dev.reliab.tech/#/clientsRecords
+    getGallery: https://tgsupbot-admin-dev.reliab.tech/#/photoGallery
+    aboutUs: https://tgsupbot-admin-dev.reliab.tech/#/aboutUs
+    reviews: https://tgsupbot-admin-dev.reliab.tech/#/reviews
+    infoAboutPayment: https://tgsupbot-admin-dev.reliab.tech/#/infoAboutPayment
+  botUsername: 'https://t.me/sup31AdminTest_bot'
+  botToken: 5896715348:AAH8qH5j8rJuovHVo3auHcru3rUFuiNTY7A
+
+ids:
+  iconAlbumId: 11
+  instructorAlbumId: 1
+  bucket: sup
+
+image:
+  quality: 0.1F
+
+integration:
+  url:
+    vkService: https://tgsupbot-dev.reliab.tech/admin/api/vk/
+    minioService: https://tgsupbot.reliab.tech/minio/
+spring:
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
+  main:
+    allow-circular-references: 'true'
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      javax:
+        persistence:
+          query:
+            timeout: '0'
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: '5'
+    username: postgres_sub
+    password: postgres_sub
+    url: jdbc:postgresql://10.120.10.6:5434/postgres_sub_test
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: 'false'
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    csrf:
+      enabled: false
+
+server:
+  error:
+    whitelabel:
+      enabled: false
+  forward-headers-strategy: framework
+  servlet:
+    context-path: /admin/api

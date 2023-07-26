@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet author="ostapova.a" id="create_column_activity_format_id">
+        <addColumn tableName="activity_type">
+            <column name="activity_format_id"
+                    type="bigint">
+            </column>
+        </addColumn>
+        <addForeignKeyConstraint baseColumnNames="activity_format_id"
+                                 baseTableName="activity_type"
+                                 constraintName="fk_activity_type_activity_format_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="activity_format"/>
+    </changeSet>
+</databaseChangeLog>

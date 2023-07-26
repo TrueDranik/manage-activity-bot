@@ -1,0 +1,44 @@
+telegram:
+  url:
+    constructor: https://tgsupbot-admin-dev.reliab.tech/#/creationSchedule
+    activity: https://tgsupbot-admin-dev.reliab.tech/#/activity
+    updateActivity: https://tgsupbot-admin-dev.reliab.tech/#/updateActivity
+    route: https://tgsupbot-admin-dev.reliab.tech/#/route
+    updateRoute: https://tgsupbot-admin-dev.reliab.tech/#/updateRoute
+    updateSchedule: https://tgsupbot-admin-dev.reliab.tech/#/updateSchedule
+    getClientRecords: https://tgsupbot-admin-dev.reliab.tech/#/clientsRecords
+    getGallery: https://tgsupbot-admin-dev.reliab.tech/#/photoGallery
+    aboutUs: https://tgsupbot-admin-dev.reliab.tech/#/aboutUs
+    reviews: https://tgsupbot-admin-dev.reliab.tech/#/reviews
+    infoAboutPayment: https://tgsupbot-admin-dev.reliab.tech/#/infoAboutPayment
+  botUsername: '@Dbydhd_bot'
+  botToken: 5713362745:AAFhdPygZuBXLPHKG3rtR8DaQyn2jOG7M3E
+integration:
+  url:
+    vkService: https://tgsupbot.reliab.tech/admin/api/vk/
+    minioService: https://tgsupbot.reliab.tech/minio/
+
+ids:
+  iconAlbumId: 11
+  instructorAlbumId: 1
+  bucket: sup
+
+image:
+  quality: 0.1F
+
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:sup-tg-bot-admin
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+  liquibase:
+    enabled: false

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="update_table_vk_wallpost" author="ostapova.a">
+        <renameTable oldTableName="vk_wallpost_full" newTableName="post"/>
+        <renameColumn tableName="post" oldColumnName="post_id" newColumnName="id"/>
+        <modifyDataType tableName="post" columnName="id" newDataType="bigint"/>
+        <addColumn tableName="post">
+            <column name="vk_id" type="integer"/>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

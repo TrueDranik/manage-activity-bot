@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
+      http://www.liquibase.org/xml/ns/pro
+      http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
+
+    <changeSet author="alexSmurov" id="1">
+        <createTable tableName="vk_user">
+            <column name="user_id"
+                    type="integer">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="first_name"
+                    type="varchar(255)">
+            </column>
+            <column name="last_name"
+                    type="varchar(255)">
+            </column>
+            <column name="photo50"
+                    type="bytea">
+            </column>
+        </createTable>
+
+        <createTable tableName="vk_wallpost_full">
+            <column name="post_id"
+                    type="integer">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="vk_wall_comment">
+            <column name="comment_id"
+                    type="integer">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="comment_status"
+                    type="varchar(255)">
+            </column>
+            <column name="date"
+                    type="timestamp">
+            </column>
+            <column name="user_id"
+                    type="integer">
+            </column>
+            <column name="post_id"
+                    type="integer">
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseColumnNames="post_id"
+                                 baseTableName="vk_wall_comment"
+                                 constraintName="fk_vk_wall_comment_post_id"
+                                 referencedColumnNames="post_id"
+                                 referencedTableName="vk_wallpost_full"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="vk_wall_comment"
+                                 constraintName="fk_vk_wall_comment_user_id"
+                                 referencedColumnNames="user_id"
+                                 referencedTableName="vk_user"/>
+
+    </changeSet>
+</databaseChangeLog>

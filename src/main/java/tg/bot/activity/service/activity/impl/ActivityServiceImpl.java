@@ -1,17 +1,16 @@
 package tg.bot.activity.service.activity.impl;
 
-import com.bot.sup.mapper.ActivityMapper;
-import com.bot.sup.model.ActivityRequestParams;
-import com.bot.sup.model.dto.tg.ActivityDto;
-import com.bot.sup.model.entity.Activity;
-import com.bot.sup.model.entity.Activity_;
-import com.bot.sup.repository.ActivityRepository;
-import com.bot.sup.repository.ScheduleRepository;
-import com.bot.sup.repository.specification.ActivitySpecification;
-import com.bot.sup.service.activity.ActivityService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import tg.bot.activity.mapper.ActivityMapper;
+import tg.bot.activity.model.ActivityRequestParams;
+import tg.bot.activity.model.dto.tg.ActivityDto;
+import tg.bot.activity.model.entity.Activity;
+import tg.bot.activity.repository.ActivityRepository;
+import tg.bot.activity.repository.ScheduleRepository;
+import tg.bot.activity.repository.specification.ActivitySpecification;
+import tg.bot.activity.service.activity.ActivityService;
 
 import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
@@ -20,10 +19,10 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ActivityServiceImpl implements ActivityService {
+
     private final ActivityRepository activityRepository;
     private final ScheduleRepository scheduleRepository;
     private final ActivityMapper activityMapper;
-
 
     @Override
     public List<ActivityDto> getAllActivity(ActivityRequestParams params) {
@@ -56,7 +55,6 @@ public class ActivityServiceImpl implements ActivityService {
 
         return activityMapper.domainToDto(activityFromDb);
     }
-
 
     @Transactional
     @Override

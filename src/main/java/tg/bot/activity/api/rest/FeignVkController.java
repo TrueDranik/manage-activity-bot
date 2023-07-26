@@ -1,14 +1,20 @@
 package tg.bot.activity.api.rest;
 
-import com.bot.sup.model.dto.vk.VkCommentDto;
-import com.bot.sup.model.dto.vk.VkUserInfoDto;
-import com.bot.sup.util.FeignVkServiceUtil;
 import lombok.RequiredArgsConstructor;
 import org.springdoc.api.annotations.ParameterObject;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import tg.bot.activity.model.dto.vk.VkCommentDto;
+import tg.bot.activity.model.dto.vk.VkUserInfoDto;
+import tg.bot.activity.util.FeignVkServiceUtil;
 
 import java.util.List;
 import java.util.Map;
@@ -18,6 +24,7 @@ import java.util.Map;
 @RestController
 @RequestMapping(value = "vk-service")
 public class FeignVkController {
+
     private final FeignVkServiceUtil feignVkServiceUtil;
 
     /**

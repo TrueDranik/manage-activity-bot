@@ -1,18 +1,18 @@
 package tg.bot.activity.api.telegram.handler.registration.client;
 
-import com.bot.sup.api.telegram.handler.registration.MessageProcessor;
-import com.bot.sup.util.MessageProcessorUtil;
-import com.bot.sup.api.telegram.handler.registration.client.states.ClientRecordMessageProcessor;
-import com.bot.sup.cache.UserStateCache;
-import com.bot.sup.common.enums.states.ClientRecordStateEnum;
-import com.bot.sup.common.enums.states.StateEnum;
-import com.bot.sup.model.UserState;
-import com.bot.sup.model.entity.Client;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Message;
+import tg.bot.activity.api.telegram.handler.registration.MessageProcessor;
+import tg.bot.activity.api.telegram.handler.registration.client.states.ClientRecordMessageProcessor;
+import tg.bot.activity.cache.UserStateCache;
+import tg.bot.activity.common.enums.states.ClientRecordStateEnum;
+import tg.bot.activity.common.enums.states.StateEnum;
+import tg.bot.activity.model.UserState;
+import tg.bot.activity.model.entity.Client;
+import tg.bot.activity.util.MessageProcessorUtil;
 
 import java.util.Map;
 
@@ -20,6 +20,7 @@ import java.util.Map;
 @Component
 @RequiredArgsConstructor
 public class StartFillingClientImpl implements ClientHandleRegistration {
+
     private final UserStateCache userStateCache;
     private final Map<ClientRecordStateEnum, ClientRecordMessageProcessor> clientRecordMessageProcessorMap;
 

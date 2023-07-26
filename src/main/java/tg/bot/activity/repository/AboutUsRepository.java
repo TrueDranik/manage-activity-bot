@@ -1,9 +1,9 @@
 package tg.bot.activity.repository;
 
-import com.bot.sup.model.entity.AboutUs;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+import tg.bot.activity.model.entity.AboutUs;
 
 import java.util.Optional;
 

@@ -1,9 +1,9 @@
 package tg.bot.activity.mapper;
 
-import com.bot.sup.model.dto.tg.ClientDto;
-import com.bot.sup.model.entity.Client;
 import org.mapstruct.Mapper;
+import tg.bot.activity.model.dto.tg.ClientDto;
+import tg.bot.activity.model.entity.Client;
 
 @Mapper(componentModel = "spring")
-public interface ClientMapper extends BaseMapper<Client, ClientDto>{
+public interface ClientMapper extends BaseMapper<Client, ClientDto> {
 }

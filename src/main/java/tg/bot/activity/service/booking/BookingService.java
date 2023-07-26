@@ -1,16 +1,17 @@
 package tg.bot.activity.service.booking;
 
-import com.bot.sup.common.enums.PaymentStatusEnum;
-import com.bot.sup.model.dto.tg.BookingCreateDto;
-import com.bot.sup.model.dto.tg.BookingDto;
-import com.bot.sup.model.dto.tg.BookingUpdateDto;
 import org.springframework.stereotype.Service;
+import tg.bot.activity.common.enums.PaymentStatusEnum;
+import tg.bot.activity.model.dto.tg.BookingCreateDto;
+import tg.bot.activity.model.dto.tg.BookingDto;
+import tg.bot.activity.model.dto.tg.BookingUpdateDto;
 
 import java.util.EnumMap;
 import java.util.List;
 
 @Service
 public interface BookingService {
+
     List<BookingDto> getBookingByScheduleId(Long scheduleId);
 
     List<BookingDto> getBookingByScheduleIdByPaymentStatus(Long scheduleId, String paymentStatus);
@@ -24,5 +25,4 @@ public interface BookingService {
     BookingDto updateBooking(BookingUpdateDto bookingUpdateDto);
 
     EnumMap<PaymentStatusEnum, Integer> getBookingAmountsByScheduleIdByPaymentStatus(Long scheduleId);
-
 }

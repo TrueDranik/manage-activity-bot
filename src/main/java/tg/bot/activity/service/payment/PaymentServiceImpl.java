@@ -1,10 +1,10 @@
 package tg.bot.activity.service.payment;
 
-import com.bot.sup.common.enums.PaymentTypeEnum;
-import com.bot.sup.model.entity.Payment;
-import com.bot.sup.repository.PaymentRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import tg.bot.activity.common.enums.PaymentTypeEnum;
+import tg.bot.activity.model.entity.Payment;
+import tg.bot.activity.repository.PaymentRepository;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;

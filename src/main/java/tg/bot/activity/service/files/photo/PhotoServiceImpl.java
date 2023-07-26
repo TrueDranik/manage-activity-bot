@@ -1,17 +1,5 @@
 package tg.bot.activity.service.files.photo;
 
-import com.bot.sup.common.enums.PhotoSizeEnum;
-import com.bot.sup.model.entity.Album;
-import com.bot.sup.model.entity.Photo;
-import com.bot.sup.model.entity.PhotoLargeSize;
-import com.bot.sup.model.entity.PhotoSmallSize;
-import com.bot.sup.repository.AlbumRepository;
-import com.bot.sup.repository.PhotoRepository;
-import com.bot.sup.service.CompressService;
-import com.bot.sup.service.PhotoFactory;
-import com.bot.sup.service.PhotoHandler;
-import com.bot.sup.service.files.MultipartFileConstructor;
-import com.bot.sup.util.FeignMinioServiceUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +7,18 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import tg.bot.activity.common.enums.PhotoSizeEnum;
+import tg.bot.activity.model.entity.Album;
+import tg.bot.activity.model.entity.Photo;
+import tg.bot.activity.model.entity.PhotoLargeSize;
+import tg.bot.activity.model.entity.PhotoSmallSize;
+import tg.bot.activity.repository.AlbumRepository;
+import tg.bot.activity.repository.PhotoRepository;
+import tg.bot.activity.service.CompressService;
+import tg.bot.activity.service.PhotoFactory;
+import tg.bot.activity.service.PhotoHandler;
+import tg.bot.activity.service.files.MultipartFileConstructor;
+import tg.bot.activity.util.FeignMinioServiceUtil;
 
 import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
@@ -33,11 +33,13 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class PhotoServiceImpl implements PhotoService {
+
     @Autowired
     private final FeignMinioServiceUtil feignMinioServiceUtil;
     private final AlbumRepository albumRepository;
     private final PhotoRepository photoRepository;
     private final CompressService compressService;
+
     @Value("${ids.bucket}")
     private String bucketName;
 

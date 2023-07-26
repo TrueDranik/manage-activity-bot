@@ -9,6 +9,7 @@ import org.telegram.telegrambots.meta.api.objects.commands.BotCommand;
 
 @Component
 public class HelpCommand implements BaseCommand {
+
     @Override
     public BotCommand getBotCommand() {
         return BotCommand.builder()

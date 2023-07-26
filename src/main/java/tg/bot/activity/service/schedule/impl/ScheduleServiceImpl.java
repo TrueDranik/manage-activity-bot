@@ -1,25 +1,24 @@
 package tg.bot.activity.service.schedule.impl;
 
-import com.bot.sup.exception.NotValidParamParticipantsException;
-import com.bot.sup.mapper.ScheduleCreateMapper;
-import com.bot.sup.mapper.ScheduleMapper;
-import com.bot.sup.model.RouteActivityRequestParams;
-import com.bot.sup.model.ScheduleParams;
-import com.bot.sup.model.dto.tg.ScheduleCreateDto;
-import com.bot.sup.model.dto.tg.ScheduleDto;
-import com.bot.sup.model.entity.Schedule;
-import com.bot.sup.model.entity.Schedule_;
-import com.bot.sup.model.entity.SelectedSchedule;
-import com.bot.sup.repository.ScheduleRepository;
-import com.bot.sup.repository.SelectedScheduleRepository;
-import com.bot.sup.repository.specification.ScheduleFilterByDateAndTimeForDaySpecification;
-import com.bot.sup.repository.specification.ScheduleFilterByDateSpecification;
-import com.bot.sup.repository.specification.ScheduleSpecification;
-import com.bot.sup.service.schedule.ScheduleService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import tg.bot.activity.exception.NotValidParamParticipantsException;
+import tg.bot.activity.mapper.ScheduleCreateMapper;
+import tg.bot.activity.mapper.ScheduleMapper;
+import tg.bot.activity.model.RouteActivityRequestParams;
+import tg.bot.activity.model.ScheduleParams;
+import tg.bot.activity.model.dto.tg.ScheduleCreateDto;
+import tg.bot.activity.model.dto.tg.ScheduleDto;
+import tg.bot.activity.model.entity.Schedule;
+import tg.bot.activity.model.entity.SelectedSchedule;
+import tg.bot.activity.repository.ScheduleRepository;
+import tg.bot.activity.repository.SelectedScheduleRepository;
+import tg.bot.activity.repository.specification.ScheduleFilterByDateAndTimeForDaySpecification;
+import tg.bot.activity.repository.specification.ScheduleFilterByDateSpecification;
+import tg.bot.activity.repository.specification.ScheduleSpecification;
+import tg.bot.activity.service.schedule.ScheduleService;
 
 import javax.persistence.EntityNotFoundException;
 import javax.persistence.OptimisticLockException;
@@ -32,6 +31,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class ScheduleServiceImpl implements ScheduleService {
+
     private final ScheduleRepository scheduleRepository;
     private final SelectedScheduleRepository selectedScheduleRepository;
     private final ScheduleMapper scheduleMapper;

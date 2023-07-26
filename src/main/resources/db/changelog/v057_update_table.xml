@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet author="ostapova.a" id="update_table_comment">
+        <modifyDataType
+                columnName="user_id"
+                newDataType="bigint"
+                tableName="comment"/>
+        <modifyDataType
+                columnName="post_id"
+                newDataType="bigint"
+                tableName="comment"/>
+        <renameColumn
+                newColumnName="user_info_id"
+                oldColumnName="user_id"
+                tableName="comment"/>
+    </changeSet>
+</databaseChangeLog>

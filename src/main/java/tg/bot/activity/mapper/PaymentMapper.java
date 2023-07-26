@@ -1,10 +1,10 @@
 package tg.bot.activity.mapper;
 
-import com.bot.sup.model.dto.PaymentDto;
-import com.bot.sup.model.dto.PaymentUpdateDto;
-import com.bot.sup.model.entity.Payment;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import tg.bot.activity.model.dto.PaymentDto;
+import tg.bot.activity.model.dto.PaymentUpdateDto;
+import tg.bot.activity.model.entity.Payment;
 
 @Mapper(componentModel = "spring")
 public interface PaymentMapper extends BaseMapper<Payment, PaymentDto> {

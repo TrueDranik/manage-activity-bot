@@ -1,0 +1,73 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <include file="changelog/v001_create_table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v002_alter_create_price.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v003_alter_create_complexity.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v004_alter_create_activityId.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v005_create_table_UserChoice.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v006_update_table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v007_update_table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v008_update_schedule_client.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v009_update_table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v010_update_table_booking.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v011_create_column_active.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v012_create_column_in_route.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v013_create_column_amount_booking.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v014_create_column_paymen_type_booking.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v015_create_column_invited_users_children_booking.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v016_update_client_notnull.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v017_create_column_schedule_booking.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v018_create_column_prepay_activity.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v019_drop_notNull_userName_client.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v020_create_table_about_us.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v021_drop_table_schedule_client.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v022_drop_notNull_tg_id_client.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v023_create_column_is_active.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v024_create_table_photo_and_album.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v025_create_table_param_varable.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v026_rename_column_albumId.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v027_create_column_photo_Id.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v028_drop_image_data.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v029_create_column_photo_id.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v030_create_column_chat_id.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v031_create_column_is_active_album.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v032_create_table_news.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v033_create_column_download_date_time.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v034_create_column_photo_id.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v035_create_column_activity_format_icon.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v036_create_table_vk.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v037_create_column_coment_text_vk.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v038_create_column_album_id.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v039_create_column_booking_user_choice.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v040_create_column_is_changeable.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v041_create_table_shedlock.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v042_create_column_vk_post_id.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v043_update_column_content.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v044_create_column_date.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v045_create_table_payment.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v046_insert_data_in_table_payment.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v047_create_column_amount_free_places.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v049_create_column_modif_time.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v050_update_column_modfi_time.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v051_update_table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v052_update_table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v053_update_table_vk_wall_comment.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v054_update_table_vk_wallpost.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v055_update_column.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v056_create_column_activity_format_id.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v057_update_table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v058_update_table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v059_update_table.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v060_create_tables.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v061_update_table_photo.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v062_drop_column_data.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v063_update_table_photo.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v064_create_column_post_url.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v065_create_column_photo_id.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v066_drop_column_album_id.xml" relativeToChangelogFile="true"/>
+    <include file="changelog/v067_create_column_client_email.xml" relativeToChangelogFile="true"/>
+
+</databaseChangeLog>

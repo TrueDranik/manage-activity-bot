@@ -1,11 +1,5 @@
 package tg.bot.activity.api.rest;
 
-import com.bot.sup.common.enums.PhotoSizeEnum;
-import com.bot.sup.mapper.PhotoMapper;
-import com.bot.sup.model.dto.tg.PhotoDto;
-import com.bot.sup.model.dto.tg.PhotoInfoDto;
-import com.bot.sup.model.entity.Photo;
-import com.bot.sup.service.files.photo.PhotoService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +20,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import tg.bot.activity.common.enums.PhotoSizeEnum;
+import tg.bot.activity.mapper.PhotoMapper;
+import tg.bot.activity.model.dto.tg.PhotoDto;
+import tg.bot.activity.model.dto.tg.PhotoInfoDto;
+import tg.bot.activity.model.entity.Photo;
+import tg.bot.activity.service.files.photo.PhotoService;
 
 import java.io.IOException;
 import java.util.List;

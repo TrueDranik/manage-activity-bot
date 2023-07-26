@@ -11,6 +11,7 @@ import java.time.LocalTime;
 @Setter
 @Schema(title = "Расписание")
 public class ScheduleResponseDto {
+
     private Long id;
     @Schema(title = "id активности", defaultValue = "1")
     private Long activityId;

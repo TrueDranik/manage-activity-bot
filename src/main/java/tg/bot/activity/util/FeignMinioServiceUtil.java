@@ -11,6 +11,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @FeignClient(value = "minioService", url = "${integration.url.minioService}")
 public interface FeignMinioServiceUtil {
+
     @GetMapping("buckets/{bucketName}/files/{fileName}/url")
     String getUrlToUploadFile(@PathVariable("fileName") String fileName, @PathVariable("bucketName") String bucketName);
 

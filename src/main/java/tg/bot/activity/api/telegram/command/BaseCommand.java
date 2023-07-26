@@ -7,6 +7,7 @@ import org.telegram.telegrambots.meta.api.objects.commands.BotCommand;
 
 @Component
 public interface BaseCommand {
+
     BotCommand getBotCommand();
 
     BotApiMethod<?> getAction(Update update);

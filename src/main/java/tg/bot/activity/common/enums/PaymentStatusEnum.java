@@ -11,6 +11,7 @@ import java.util.Map;
 @Getter
 @RequiredArgsConstructor
 public enum PaymentStatusEnum {
+
     PAID("Оплачено"),
     NOT_PAID("Не оплачено"),
     REFUND_REQUESTED("Запрошен возврат"),

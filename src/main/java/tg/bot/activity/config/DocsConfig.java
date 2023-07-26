@@ -1,6 +1,5 @@
 package tg.bot.activity.config;
 
-import com.bot.sup.exception.ApiExceptionResponseBody;
 import io.swagger.v3.core.converter.AnnotatedType;
 import io.swagger.v3.core.converter.ModelConverters;
 import io.swagger.v3.core.converter.ResolvedSchema;
@@ -16,11 +15,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.method.HandlerMethod;
+import tg.bot.activity.exception.ApiExceptionResponseBody;
 
 import java.util.Arrays;
 
 @Configuration
 public class DocsConfig {
+
     @Value("${app.docs.title:Sup BOT Admin API Docs}")
     private String apiTitle;
 

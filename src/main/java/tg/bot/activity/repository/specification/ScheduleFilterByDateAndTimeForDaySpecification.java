@@ -1,9 +1,9 @@
 package tg.bot.activity.repository.specification;
 
-import com.bot.sup.model.ScheduleParams;
-import com.bot.sup.model.entity.Schedule;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
+import tg.bot.activity.model.ScheduleParams;
+import tg.bot.activity.model.entity.Schedule;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;

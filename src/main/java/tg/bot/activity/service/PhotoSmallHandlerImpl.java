@@ -1,13 +1,13 @@
 package tg.bot.activity.service;
 
-import com.bot.sup.common.enums.PhotoSizeEnum;
-import com.bot.sup.model.entity.PhotoSmallSize;
-import com.bot.sup.repository.PhotoRepository;
-import com.bot.sup.repository.PhotoSmallRepository;
-import com.bot.sup.util.FeignMinioServiceUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import tg.bot.activity.common.enums.PhotoSizeEnum;
+import tg.bot.activity.model.entity.PhotoSmallSize;
+import tg.bot.activity.repository.PhotoRepository;
+import tg.bot.activity.repository.PhotoSmallRepository;
+import tg.bot.activity.util.FeignMinioServiceUtil;
 
 import javax.persistence.EntityNotFoundException;
 import java.sql.Timestamp;
@@ -16,12 +16,14 @@ import java.time.LocalDateTime;
 @Service
 @RequiredArgsConstructor
 public class PhotoSmallHandlerImpl implements PhotoHandler {
+
     private final PhotoRepository photoRepository;
     private final PhotoSmallRepository photoSmallRepository;
     private final FeignMinioServiceUtil minioServiceUtil;
 
     @Value("${ids.bucket}")
     private String bucketName;
+
     @Override
     public String getPhotoUrlFromDb(Long id) {
         PhotoSmallSize photo = photoRepository.findById(id)

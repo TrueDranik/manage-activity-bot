@@ -15,5 +15,4 @@ public class ManageActivityBotApplication {
     public static void main(String[] args) {
         SpringApplication.run(ManageActivityBotApplication.class, args);
     }
-
 }

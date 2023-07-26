@@ -26,6 +26,7 @@ public class CustomMultipartFile implements MultipartFile {
     public String getContentType() {
         return null;
     }
+
     @Override
     public boolean isEmpty() {
         return input == null || input.length == 0;
@@ -48,7 +49,7 @@ public class CustomMultipartFile implements MultipartFile {
 
     @Override
     public void transferTo(File destination) throws IOException, IllegalStateException {
-        try(FileOutputStream fos = new FileOutputStream(destination)) {
+        try (FileOutputStream fos = new FileOutputStream(destination)) {
             fos.write(input);
         }
     }

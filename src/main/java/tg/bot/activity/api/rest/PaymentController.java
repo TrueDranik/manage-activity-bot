@@ -1,12 +1,5 @@
 package tg.bot.activity.api.rest;
 
-import com.bot.sup.common.enums.PaymentTypeEnum;
-import com.bot.sup.mapper.PaymentMapper;
-import com.bot.sup.model.dto.PaymentDto;
-import com.bot.sup.model.dto.PaymentUpdateDto;
-import com.bot.sup.model.entity.Payment;
-import com.bot.sup.model.entity.Payment_;
-import com.bot.sup.service.payment.PaymentService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
@@ -19,6 +12,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import tg.bot.activity.common.enums.PaymentTypeEnum;
+import tg.bot.activity.mapper.PaymentMapper;
+import tg.bot.activity.model.dto.PaymentDto;
+import tg.bot.activity.model.dto.PaymentUpdateDto;
+import tg.bot.activity.model.entity.Payment;
+import tg.bot.activity.service.payment.PaymentService;
 
 import java.util.Map;
 

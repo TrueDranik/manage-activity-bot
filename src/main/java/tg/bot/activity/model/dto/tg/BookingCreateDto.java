@@ -18,5 +18,4 @@ public class BookingCreateDto {
     private BigDecimal amountPaid;
     private String paymentType;
     private Long scheduleId;
-
 }

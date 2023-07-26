@@ -1,6 +1,7 @@
 package tg.bot.activity.common.enums;
 
 public enum CallbackEnum {
+
     MENU,
     // РАСПИСАНИЕ
     SCHEDULE,

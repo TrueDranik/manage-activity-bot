@@ -1,0 +1,25 @@
+insert into photo(id, name_from_request, album_id) values (1, 'Photo 1', 1);
+insert into photo(id, name_from_request, album_id) values (2, 'Photo 2', 1);
+insert into photo(id, name_from_request, album_id) values (3, 'Photo 3', 1);
+insert into photo(id, name_from_request, album_id) values (4, 'Photo 4', 1);
+insert into photo(id, name_from_request, album_id) values (5, 'Photo 5', 1);
+insert into photo(id, name_from_request, album_id) values (6, 'Photo 6', 1);
+insert into photo(id, name_from_request, album_id) values (7, 'Photo 7', 1);
+insert into photo(id, name_from_request, album_id) values (8, 'Photo 8', 1);
+insert into photo(id, name_from_request, album_id) values (9, 'Photo 9', 1);
+insert into photo(id, name_from_request, album_id) values (10, 'Photo 10', 1);
+insert into photo(id, name_from_request, album_id) values (11, 'Photo 11', 1);
+insert into photo(id, name_from_request, album_id) values (12, 'Photo 12', 1);
+insert into photo(id, name_from_request, album_id) values (13, 'Photo 13', 1);
+insert into photo(id, name_from_request, album_id) values (14, 'Photo 14', 1);
+insert into photo(id, name_from_request, album_id) values (15, 'Photo 15', 1);
+insert into photo(id, name_from_request, album_id) values (16, 'Photo 16', 1);
+insert into photo(id, name_from_request, album_id) values (17, 'Photo 17', 1);
+insert into photo(id, name_from_request, album_id) values (18, 'Photo 18', 1);
+insert into photo(id, name_from_request, album_id) values (19, 'Photo 19', 1);
+insert into photo(id, name_from_request, album_id) values (20, 'Photo 20', 1);
+insert into photo(id, name_from_request, album_id) values (21, 'Photo 21', 1);
+
+insert into photo(id, name_from_request, album_id) values (22, 'Photo 22', 2);
+insert into photo(id, name_from_request, album_id) values (23, 'Photo 23', 2);
+insert into photo(id, name_from_request, album_id) values (24, 'Photo 24', 2);

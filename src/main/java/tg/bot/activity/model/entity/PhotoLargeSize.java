@@ -20,6 +20,7 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PhotoLargeSize {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

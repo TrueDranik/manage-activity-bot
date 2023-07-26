@@ -12,6 +12,7 @@ import java.util.List;
 @Setter
 @Schema(title = "Расписание")
 public class ScheduleCreateDto {
+
     @Schema(title = "id активности", defaultValue = "1")
     private Long activityId;
     @Schema(title = "Дата старта", defaultValue = "1970-01-01")

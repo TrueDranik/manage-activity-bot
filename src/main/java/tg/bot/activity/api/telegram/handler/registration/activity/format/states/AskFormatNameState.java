@@ -1,23 +1,24 @@
 package tg.bot.activity.api.telegram.handler.registration.activity.format.states;
 
-import com.bot.sup.cache.UserStateCache;
-import com.bot.sup.common.enums.states.ActivityFormatStateEnum;
-import com.bot.sup.common.properties.message.ActivityMessageProperties;
-import com.bot.sup.model.UserState;
-import com.bot.sup.model.entity.ActivityFormat;
-import com.bot.sup.model.entity.Album;
-import com.bot.sup.service.MessageService;
-import com.bot.sup.service.activity.format.impl.ActivityFormatServiceImpl;
-import com.bot.sup.service.files.AlbumService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Message;
+import tg.bot.activity.cache.UserStateCache;
+import tg.bot.activity.common.enums.states.ActivityFormatStateEnum;
+import tg.bot.activity.common.properties.message.ActivityMessageProperties;
+import tg.bot.activity.model.UserState;
+import tg.bot.activity.model.entity.ActivityFormat;
+import tg.bot.activity.model.entity.Album;
+import tg.bot.activity.service.MessageService;
+import tg.bot.activity.service.activity.format.impl.ActivityFormatServiceImpl;
+import tg.bot.activity.service.files.AlbumService;
 
 @Component
 @RequiredArgsConstructor
 public class AskFormatNameState implements ActivityFormatMessageProcessor {
+
     private final MessageService messageService;
     private final ActivityMessageProperties activityMessageProperties;
     private final ActivityFormatServiceImpl activityFormatService;

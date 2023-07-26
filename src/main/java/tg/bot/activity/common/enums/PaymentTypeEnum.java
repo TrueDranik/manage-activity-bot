@@ -31,14 +31,14 @@ public enum PaymentTypeEnum {
         return titles;
     }
 
-    public static PaymentTypeEnum convertToEnum(String titleEng){
+    public static PaymentTypeEnum convertToEnum(String titleEng) {
         return Stream.of(PaymentTypeEnum.values())
                 .filter(status -> status.getType().equals(titleEng))
                 .findFirst()
                 .orElseThrow(IllegalArgumentException::new);
     }
 
-    public static String convertToTitleEng(PaymentTypeEnum paymentType){
+    public static String convertToTitleEng(PaymentTypeEnum paymentType) {
         return paymentType.type;
     }
 }

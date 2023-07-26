@@ -1,6 +1,7 @@
 package tg.bot.activity.common.enums.states;
 
 public enum ClientRecordStateEnum implements StateEnum<ClientRecordStateEnum> {
+
     START_PROCESSING,
     FILLING_CLIENT,
     ASK_TELEGRAM_ID,

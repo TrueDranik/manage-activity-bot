@@ -8,6 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 public class PhotoInfoDto {
+
     private Long id;
     private String name;
 }

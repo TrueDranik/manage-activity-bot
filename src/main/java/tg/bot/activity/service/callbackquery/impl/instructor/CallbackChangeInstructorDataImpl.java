@@ -1,27 +1,28 @@
 package tg.bot.activity.service.callbackquery.impl.instructor;
 
-import com.bot.sup.api.telegram.handler.registration.StateContext;
-import com.bot.sup.cache.UserStateCache;
-import com.bot.sup.common.enums.CallbackEnum;
-import com.bot.sup.common.enums.states.InstructorStateEnum;
-import com.bot.sup.model.UserState;
-import com.bot.sup.model.entity.Instructor;
-import com.bot.sup.service.callbackquery.Callback;
-import com.bot.sup.service.instructor.InstructorService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
-import com.bot.sup.util.UserStateUtil;
+import tg.bot.activity.api.telegram.handler.registration.StateContext;
+import tg.bot.activity.cache.UserStateCache;
+import tg.bot.activity.common.enums.CallbackEnum;
+import tg.bot.activity.common.enums.states.InstructorStateEnum;
+import tg.bot.activity.model.UserState;
+import tg.bot.activity.model.entity.Instructor;
+import tg.bot.activity.service.callbackquery.Callback;
+import tg.bot.activity.service.instructor.InstructorService;
+import tg.bot.activity.util.UserStateUtil;
 
-import static com.bot.sup.common.enums.CallbackEnum.CHANGE_INSTRUCTOR;
+import static tg.bot.activity.common.enums.CallbackEnum.CHANGE_INSTRUCTOR;
 
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class CallbackChangeInstructorDataImpl implements Callback {
+
     private final StateContext stateContext;
     private final UserStateCache userStateCache;
     private final InstructorService instructorService;

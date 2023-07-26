@@ -1,11 +1,5 @@
 package tg.bot.activity.service.callbackquery.impl.activity.type;
 
-import com.bot.sup.common.enums.CallbackEnum;
-import com.bot.sup.common.properties.message.ActivityMessageProperties;
-import com.bot.sup.common.properties.message.MainMessageProperties;
-import com.bot.sup.model.entity.ActivityType;
-import com.bot.sup.service.activity.type.impl.ActivityTypeServiceImpl;
-import com.bot.sup.service.callbackquery.Callback;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod;
@@ -14,6 +8,12 @@ import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import tg.bot.activity.common.enums.CallbackEnum;
+import tg.bot.activity.common.properties.message.ActivityMessageProperties;
+import tg.bot.activity.common.properties.message.MainMessageProperties;
+import tg.bot.activity.model.entity.ActivityType;
+import tg.bot.activity.service.activity.type.impl.ActivityTypeServiceImpl;
+import tg.bot.activity.service.callbackquery.Callback;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -22,6 +22,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class CallbackListActivityTypeImpl implements Callback {
+
     private final ActivityTypeServiceImpl activityTypeService;
     private final MainMessageProperties mainMessageProperties;
     private final ActivityMessageProperties activityMessageProperties;

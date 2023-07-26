@@ -1,24 +1,5 @@
 package tg.bot.activity.api.telegram.handler.registration.activity.format.states;
 
-import com.bot.sup.cache.UserStateCache;
-import com.bot.sup.common.enums.CallbackEnum;
-import com.bot.sup.common.enums.states.ActivityFormatStateEnum;
-import com.bot.sup.common.properties.TelegramProperties;
-import com.bot.sup.common.properties.message.ActivityMessageProperties;
-import com.bot.sup.common.properties.message.MainMessageProperties;
-import com.bot.sup.model.UserState;
-import com.bot.sup.model.entity.ActivityFormat;
-import com.bot.sup.model.entity.Album;
-import com.bot.sup.model.entity.Photo;
-import com.bot.sup.repository.AlbumRepository;
-import com.bot.sup.repository.PhotoRepository;
-import com.bot.sup.service.MessageService;
-import com.bot.sup.service.activity.format.impl.ActivityFormatServiceImpl;
-import com.bot.sup.service.files.AlbumService;
-import com.bot.sup.service.files.MultipartFileConstructor;
-import com.bot.sup.service.files.photo.PhotoService;
-import com.bot.sup.util.ImageUtil;
-import com.bot.sup.util.KeyboardUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -27,6 +8,25 @@ import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Document;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import tg.bot.activity.cache.UserStateCache;
+import tg.bot.activity.common.enums.CallbackEnum;
+import tg.bot.activity.common.enums.states.ActivityFormatStateEnum;
+import tg.bot.activity.common.properties.TelegramProperties;
+import tg.bot.activity.common.properties.message.ActivityMessageProperties;
+import tg.bot.activity.common.properties.message.MainMessageProperties;
+import tg.bot.activity.model.UserState;
+import tg.bot.activity.model.entity.ActivityFormat;
+import tg.bot.activity.model.entity.Album;
+import tg.bot.activity.model.entity.Photo;
+import tg.bot.activity.repository.AlbumRepository;
+import tg.bot.activity.repository.PhotoRepository;
+import tg.bot.activity.service.MessageService;
+import tg.bot.activity.service.activity.format.impl.ActivityFormatServiceImpl;
+import tg.bot.activity.service.files.AlbumService;
+import tg.bot.activity.service.files.MultipartFileConstructor;
+import tg.bot.activity.service.files.photo.PhotoService;
+import tg.bot.activity.util.ImageUtil;
+import tg.bot.activity.util.KeyboardUtil;
 
 import java.io.IOException;
 import java.util.Arrays;
@@ -35,6 +35,7 @@ import java.util.concurrent.ExecutionException;
 @Component
 @RequiredArgsConstructor
 public class AskFormatPhotoState implements ActivityFormatMessageProcessor {
+
     public static final String IMAGE_SVG_XML = "image/svg+xml";
     private final MessageService messageService;
     private final ActivityMessageProperties activityMessageProperties;
@@ -46,6 +47,7 @@ public class AskFormatPhotoState implements ActivityFormatMessageProcessor {
     private final PhotoRepository photoRepository;
     private final AlbumService albumService;
     private final PhotoService photoService;
+
     @Value("${ids.iconAlbumId}")
     private Long iconAlbumId;
 

@@ -1,14 +1,15 @@
 package tg.bot.activity.common.properties.message;
 
-import com.bot.sup.common.properties.YamlPropertySourceFactory;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
+import tg.bot.activity.common.properties.YamlPropertySourceFactory;
 
 @Data
 @ConfigurationProperties(prefix = "message.instructor")
 @PropertySource(value = "classpath:messages.yaml", factory = YamlPropertySourceFactory.class)
 public class InstructorMessageProperties {
+
     String instructors;
     String menuInstructors;
     String listInstructor;

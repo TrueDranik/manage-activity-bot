@@ -1,12 +1,5 @@
 package tg.bot.activity.api.rest;
 
-import com.bot.sup.common.enums.PaymentStatusEnum;
-import com.bot.sup.model.dto.tg.BookingCreateDto;
-import com.bot.sup.model.dto.tg.BookingDto;
-import com.bot.sup.model.dto.tg.BookingUpdateDto;
-import com.bot.sup.service.booking.BookingService;
-import com.bot.sup.service.client.ClientService;
-import com.bot.sup.service.schedule.ScheduleService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -21,6 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import tg.bot.activity.common.enums.PaymentStatusEnum;
+import tg.bot.activity.model.dto.tg.BookingCreateDto;
+import tg.bot.activity.model.dto.tg.BookingDto;
+import tg.bot.activity.model.dto.tg.BookingUpdateDto;
+import tg.bot.activity.service.booking.BookingService;
+import tg.bot.activity.service.client.ClientService;
+import tg.bot.activity.service.schedule.ScheduleService;
 
 import java.util.List;
 import java.util.Map;
@@ -31,6 +31,7 @@ import java.util.Map;
 @RequestMapping(value = "/booking")
 @Tag(name = "Бронь")
 public class BookingController {
+
     private final BookingService bookingService;
     private final ClientService clientService;
     private final ScheduleService scheduleService;
@@ -63,7 +64,6 @@ public class BookingController {
                                                                   @RequestParam(value = "paymentStatus") String paymentStatus) {
         return bookingService.getBookingByScheduleIdByPaymentStatus(Long.valueOf(id), paymentStatus);
     }
-
 
     @GetMapping("/status")
     @ResponseStatus(HttpStatus.OK)

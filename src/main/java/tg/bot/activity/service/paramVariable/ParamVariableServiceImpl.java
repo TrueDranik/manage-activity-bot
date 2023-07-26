@@ -1,19 +1,19 @@
 package tg.bot.activity.service.paramVariable;
 
-import com.bot.sup.mapper.ParamVariableMapper;
-import com.bot.sup.model.dto.ParamVariableCreateDto;
-import com.bot.sup.model.dto.ParamVariableDto;
-import com.bot.sup.model.entity.ParamVariable;
-import com.bot.sup.repository.ParamVariableRepository;
-import com.bot.sup.service.paramVariable.ParamVariableService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import tg.bot.activity.mapper.ParamVariableMapper;
+import tg.bot.activity.model.dto.ParamVariableCreateDto;
+import tg.bot.activity.model.dto.ParamVariableDto;
+import tg.bot.activity.model.entity.ParamVariable;
+import tg.bot.activity.repository.ParamVariableRepository;
 
 import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class ParamVariableServiceImpl implements ParamVariableService {
+
     private final ParamVariableRepository paramVariableRepository;
     private final ParamVariableMapper paramVariableMapper;
 
@@ -74,6 +74,4 @@ public class ParamVariableServiceImpl implements ParamVariableService {
             }
         }
     }
-
-
 }

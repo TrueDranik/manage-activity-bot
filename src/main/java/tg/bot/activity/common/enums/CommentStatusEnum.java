@@ -11,6 +11,7 @@ import java.util.stream.Stream;
 @Getter
 @RequiredArgsConstructor
 public enum CommentStatusEnum {
+
     NOT_VIEWED("NOT_VIEWED", "Не просмотрен"),
     BLOCKED("BLOCKED", "Заблокирован"),
     PUBLISHED("PUBLISHED", "Опубликован");

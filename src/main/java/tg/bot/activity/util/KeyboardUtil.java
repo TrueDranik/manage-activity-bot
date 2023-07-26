@@ -9,6 +9,7 @@ import java.util.List;
 
 @UtilityClass
 public class KeyboardUtil {
+
     public static InlineKeyboardMarkup inlineKeyboardMarkupWithOneButton(String callbackData, String text) {
         List<List<InlineKeyboardButton>> buttons = new ArrayList<>();
 

@@ -1,13 +1,13 @@
 package tg.bot.activity.service.instructor;
 
-import com.bot.sup.mapper.InstructorMapper;
-import com.bot.sup.model.dto.tg.InstructorDto;
-import com.bot.sup.model.entity.Instructor;
-import com.bot.sup.repository.InstructorRepository;
-import com.bot.sup.service.files.photo.PhotoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import tg.bot.activity.mapper.InstructorMapper;
+import tg.bot.activity.model.dto.tg.InstructorDto;
+import tg.bot.activity.model.entity.Instructor;
+import tg.bot.activity.repository.InstructorRepository;
+import tg.bot.activity.service.files.photo.PhotoService;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
@@ -15,6 +15,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class InstructorService {
+
     private final InstructorRepository instructorRepository;
     private final InstructorMapper instructorMapper;
     private final PhotoService photoService;

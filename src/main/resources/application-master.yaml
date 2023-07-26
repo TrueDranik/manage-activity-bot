@@ -1,0 +1,75 @@
+telegram:
+  url:
+    constructor: https://tgsupbot-admin.reliab.tech/#/creationSchedule
+    activity: https://tgsupbot-admin.reliab.tech/#/activity
+    updateActivity: https://tgsupbot-admin.reliab.tech/#/updateActivity
+    route: https://tgsupbot-admin.reliab.tech/#/route
+    updateRoute: https://tgsupbot-admin.reliab.tech/#/updateRoute
+    updateSchedule: https://tgsupbot-admin.reliab.tech/#/updateSchedule
+    getClientRecords: https://tgsupbot-admin.reliab.tech/#/clientsRecords
+    getGallery: https://tgsupbot-admin.reliab.tech/#/photoGallery
+    aboutUs: https://tgsupbot-admin.reliab.tech/#/aboutUs
+    reviews: https://tgsupbot-admin.reliab.tech/#/reviews
+    infoAboutPayment: https://tgsupbot-admin.reliab.tech/#/infoAboutPayment
+  botUsername: '@sup31_bot'
+  botToken: 5617783598:AAEVI_edk9ptSp6aFrjRjZ8XeMMdn9m3PEc
+
+ids:
+  iconAlbumId: 5
+  instructorAlbumId: 8
+  bucket: sup-prod
+
+image:
+  quality: 0.1F
+
+integration:
+  url:
+    vkService: https://tgsupbot.reliab.tech/admin/api/vk/
+    minioService: https://tgsupbot.reliab.tech/minio/
+spring:
+  servlet:
+    multipart:
+      max-file-size: 30MB
+      max-request-size: 30MB
+  main:
+    allow-circular-references: 'true'
+  jpa:
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      javax:
+        persistence:
+          query:
+            timeout: '0'
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    password: postgres_sub
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: '5'
+    username: postgres_sub
+    url: jdbc:postgresql://10.120.10.6:5433/postgres_sub
+  jackson:
+    serialization:
+      FAIL_ON_EMPTY_BEANS: 'false'
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    csrf:
+      enabled: false
+
+server:
+  error:
+    whitelabel:
+      enabled: false
+  forward-headers-strategy: framework
+  servlet:
+    context-path: /admin/api

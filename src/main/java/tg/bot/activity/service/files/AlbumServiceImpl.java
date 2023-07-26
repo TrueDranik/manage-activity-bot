@@ -1,11 +1,11 @@
 package tg.bot.activity.service.files;
 
-import com.bot.sup.mapper.AlbumMapper;
-import com.bot.sup.model.dto.tg.AlbumDto;
-import com.bot.sup.model.entity.Album;
-import com.bot.sup.repository.AlbumRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import tg.bot.activity.mapper.AlbumMapper;
+import tg.bot.activity.model.dto.tg.AlbumDto;
+import tg.bot.activity.model.entity.Album;
+import tg.bot.activity.repository.AlbumRepository;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
@@ -13,6 +13,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class AlbumServiceImpl implements AlbumService {
+
     private final AlbumRepository albumRepository;
     private final AlbumMapper albumMapper;
 

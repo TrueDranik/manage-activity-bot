@@ -1,7 +1,7 @@
 package tg.bot.activity.service.files;
 
-import com.bot.sup.model.dto.tg.AlbumDto;
-import com.bot.sup.model.entity.Album;
+import tg.bot.activity.model.dto.tg.AlbumDto;
+import tg.bot.activity.model.entity.Album;
 
 import java.util.List;
 

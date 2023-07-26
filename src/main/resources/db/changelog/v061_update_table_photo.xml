@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
+
+    <changeSet id="update_table_photo" author="ostapova.a.a">
+        <renameColumn tableName="photo" oldColumnName="name" newColumnName="name_from_request"/>
+        <addColumn tableName="photo">
+            <column name="large_photo" type="bigint"/>
+        </addColumn>
+        <addColumn tableName="photo">
+            <column name="small_photo" type="bigint"/>
+        </addColumn>
+        <addForeignKeyConstraint baseTableName="photo"
+                                 baseColumnNames="large_photo"
+                                 constraintName="fk_photo_large_photo"
+                                 referencedTableName="photo_large_size"
+                                 referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="photo"
+                                 baseColumnNames="small_photo"
+                                 constraintName="fk_photo_small_photo"
+                                 referencedTableName="photo_small_size"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+</databaseChangeLog>

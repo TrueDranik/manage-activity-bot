@@ -1,15 +1,15 @@
 package tg.bot.activity.service.aboutUs;
 
-import com.bot.sup.mapper.AboutUsMapper;
-import com.bot.sup.model.dto.AboutUsDto;
-import com.bot.sup.model.dto.AboutUsUpdateDto;
-import com.bot.sup.model.entity.AboutUs;
-import com.bot.sup.model.entity.Photo;
-import com.bot.sup.repository.AboutUsRepository;
-import com.bot.sup.service.files.photo.PhotoService;
-import com.bot.sup.service.paramVariable.ParamVariableService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import tg.bot.activity.mapper.AboutUsMapper;
+import tg.bot.activity.model.dto.AboutUsDto;
+import tg.bot.activity.model.dto.AboutUsUpdateDto;
+import tg.bot.activity.model.entity.AboutUs;
+import tg.bot.activity.model.entity.Photo;
+import tg.bot.activity.repository.AboutUsRepository;
+import tg.bot.activity.service.files.photo.PhotoService;
+import tg.bot.activity.service.paramVariable.ParamVariableService;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.Objects;
@@ -18,10 +18,9 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class AboutUsServiceServiceImpl implements AboutUsService {
+
     private final AboutUsRepository aboutUsRepository;
-
     private final AboutUsMapper aboutUsMapper;
-
     private final ParamVariableService paramVariableService;
     private final PhotoService photoService;
 

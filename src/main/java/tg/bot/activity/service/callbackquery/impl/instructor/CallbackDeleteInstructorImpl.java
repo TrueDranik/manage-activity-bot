@@ -1,12 +1,5 @@
 package tg.bot.activity.service.callbackquery.impl.instructor;
 
-import com.bot.sup.common.enums.CallbackEnum;
-import com.bot.sup.common.properties.message.InstructorMessageProperties;
-import com.bot.sup.common.properties.message.MainMessageProperties;
-import com.bot.sup.model.entity.Instructor;
-import com.bot.sup.model.entity.Schedule;
-import com.bot.sup.service.callbackquery.Callback;
-import com.bot.sup.service.instructor.InstructorService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -16,6 +9,13 @@ import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
+import tg.bot.activity.common.enums.CallbackEnum;
+import tg.bot.activity.common.properties.message.InstructorMessageProperties;
+import tg.bot.activity.common.properties.message.MainMessageProperties;
+import tg.bot.activity.model.entity.Instructor;
+import tg.bot.activity.model.entity.Schedule;
+import tg.bot.activity.service.callbackquery.Callback;
+import tg.bot.activity.service.instructor.InstructorService;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,6 +26,7 @@ import java.util.Set;
 @Slf4j
 @RequiredArgsConstructor
 public class CallbackDeleteInstructorImpl implements Callback {
+
     private final MainMessageProperties mainMessageProperties;
     private final InstructorMessageProperties instructorMessageProperties;
     private final InstructorService instructorService;

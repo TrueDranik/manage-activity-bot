@@ -1,9 +1,9 @@
 package tg.bot.activity.service;
 
-import com.bot.sup.util.ImageUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import tg.bot.activity.util.ImageUtil;
 
 import java.io.IOException;
 

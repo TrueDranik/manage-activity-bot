@@ -1,14 +1,5 @@
 package tg.bot.activity.api.telegram.handler.registration.instructor.states;
 
-import com.bot.sup.cache.UserStateCache;
-import com.bot.sup.common.enums.CallbackEnum;
-import com.bot.sup.common.enums.states.InstructorStateEnum;
-import com.bot.sup.common.properties.message.InstructorMessageProperties;
-import com.bot.sup.model.UserState;
-import com.bot.sup.model.entity.Instructor;
-import com.bot.sup.service.MessageService;
-import com.bot.sup.service.instructor.InstructorService;
-import com.bot.sup.util.KeyboardUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -16,11 +7,21 @@ import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import tg.bot.activity.cache.UserStateCache;
+import tg.bot.activity.common.enums.CallbackEnum;
+import tg.bot.activity.common.enums.states.InstructorStateEnum;
+import tg.bot.activity.common.properties.message.InstructorMessageProperties;
+import tg.bot.activity.model.UserState;
+import tg.bot.activity.model.entity.Instructor;
+import tg.bot.activity.service.MessageService;
+import tg.bot.activity.service.instructor.InstructorService;
+import tg.bot.activity.util.KeyboardUtil;
 
 @Slf4j
 @Component
 @RequiredArgsConstructor
 public class AskInstructorTelegramIdState implements InstructorMessageProcessor {
+
     private final MessageService messageService;
     private final InstructorMessageProperties instructorMessageProperties;
     private final InstructorService instructorService;

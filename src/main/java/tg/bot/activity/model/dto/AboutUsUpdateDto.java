@@ -8,6 +8,7 @@ import java.util.List;
 @Getter
 @Setter
 public class AboutUsUpdateDto {
+
     private String fullDescription;
     private String title;
     private List<ParamVariableDto> paramsToUpdate;

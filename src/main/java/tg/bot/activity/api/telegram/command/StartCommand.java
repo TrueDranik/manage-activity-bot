@@ -1,8 +1,5 @@
 package tg.bot.activity.api.telegram.command;
 
-import com.bot.sup.api.telegram.handler.impl.HandleMainMenuImpl;
-import com.bot.sup.cache.UserStateCache;
-import com.bot.sup.common.properties.message.MainMessageProperties;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
@@ -10,10 +7,14 @@ import org.telegram.telegrambots.meta.api.methods.ParseMode;
 import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.commands.BotCommand;
+import tg.bot.activity.api.telegram.handler.impl.HandleMainMenuImpl;
+import tg.bot.activity.cache.UserStateCache;
+import tg.bot.activity.common.properties.message.MainMessageProperties;
 
 @Component
 @RequiredArgsConstructor
 public class StartCommand implements BaseCommand {
+
     private final HandleMainMenuImpl handleMainMenu;
     private final MainMessageProperties mainMessageProperties;
     private final UserStateCache userStateCache;

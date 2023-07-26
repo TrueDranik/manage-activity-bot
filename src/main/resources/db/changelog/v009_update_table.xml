@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
+      http://www.liquibase.org/xml/ns/pro
+      http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
+
+    <changeSet author="alexSmurov" id="1">
+
+        <dropNotNullConstraint
+                columnName="description"
+                tableName="activity_format"/>
+
+        <dropNotNullConstraint
+                columnName="description"
+                tableName="activity_type"/>
+
+        <dropColumn
+                columnName="route_id"
+                tableName="activity"/>
+        <dropNotNullConstraint
+                columnName="activity_type_id"
+                tableName="activity"/>
+
+        <addNotNullConstraint
+                tableName="route"
+                columnName="start_point_coordinates"/>
+        <addNotNullConstraint
+                tableName="route"
+                columnName="finish_point_coordinates"/>
+        <addNotNullConstraint
+                tableName="route"
+                columnName="map_link"/>
+        
+        <addColumn tableName="schedule">
+            <column name="route_id"
+                    type="bigint"/>
+        </addColumn>
+        <addNotNullConstraint
+                tableName="schedule"
+                columnName="route_id"/>
+
+        <addNotNullConstraint
+                tableName="instructor"
+                columnName="first_name"/>
+        <addNotNullConstraint
+                tableName="instructor"
+                columnName="last_name"/>
+        <addNotNullConstraint
+                tableName="instructor"
+                columnName="telegram_id"/>
+        <dropNotNullConstraint
+                tableName="instructor"
+                columnName="username"/>
+        <addNotNullConstraint
+                tableName="instructor"
+                columnName="phone_number"/>
+        
+        <addNotNullConstraint
+                tableName="client"
+                columnName="first_name"/>
+        <addNotNullConstraint
+                tableName="client"
+                columnName="last_name"/>
+        <addNotNullConstraint
+                tableName="client"
+                columnName="phone_number"/>
+
+        <addColumn tableName="booking">
+            <column name="ins_time"
+                    type="date"/>
+        </addColumn>
+        <addNotNullConstraint
+                tableName="booking"
+                columnName="ins_time"/>
+        <addColumn tableName="booking">
+            <column name="modif_time"
+                    type="bigint"/>
+        </addColumn>
+        <addNotNullConstraint
+                tableName="booking"
+                columnName="modif_time"/>
+
+        <addForeignKeyConstraint baseColumnNames="route_id"
+                                 baseTableName="schedule"
+                                 constraintName="fk_schedule_route_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="route"/>
+
+
+    </changeSet>
+
+</databaseChangeLog>

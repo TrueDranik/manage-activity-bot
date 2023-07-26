@@ -1,15 +1,5 @@
 package tg.bot.activity.api.telegram.handler.impl;
 
-import com.bot.sup.common.enums.CallbackEnum;
-import com.bot.sup.common.properties.TelegramProperties;
-import com.bot.sup.common.properties.message.MainMessageProperties;
-import com.bot.sup.common.properties.message.ScheduleMessageProperties;
-import com.bot.sup.model.entity.Activity;
-import com.bot.sup.model.entity.ActivityFormat;
-import com.bot.sup.model.entity.ActivityType;
-import com.bot.sup.model.entity.Route;
-import com.bot.sup.model.entity.Schedule;
-import com.bot.sup.repository.ScheduleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
@@ -20,6 +10,14 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.api.objects.webapp.WebAppInfo;
+import tg.bot.activity.common.enums.CallbackEnum;
+import tg.bot.activity.common.properties.TelegramProperties;
+import tg.bot.activity.common.properties.message.MainMessageProperties;
+import tg.bot.activity.common.properties.message.ScheduleMessageProperties;
+import tg.bot.activity.model.entity.Activity;
+import tg.bot.activity.model.entity.Route;
+import tg.bot.activity.model.entity.Schedule;
+import tg.bot.activity.repository.ScheduleRepository;
 
 import javax.persistence.EntityNotFoundException;
 import java.time.LocalDate;
@@ -33,6 +31,7 @@ import java.util.Optional;
 @Component
 @RequiredArgsConstructor
 public class HandleScheduleInfoImpl {
+
     private final ScheduleRepository scheduleRepository;
     private final MainMessageProperties mainMessageProperties;
     private final ScheduleMessageProperties scheduleMessageProperties;

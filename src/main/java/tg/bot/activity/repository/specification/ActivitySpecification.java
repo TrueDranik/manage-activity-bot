@@ -1,9 +1,9 @@
 package tg.bot.activity.repository.specification;
 
-import com.bot.sup.model.ActivityRequestParams;
-import com.bot.sup.model.entity.Activity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
+import tg.bot.activity.model.ActivityRequestParams;
+import tg.bot.activity.model.entity.Activity;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;

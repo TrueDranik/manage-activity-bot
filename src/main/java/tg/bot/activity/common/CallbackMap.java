@@ -1,7 +1,7 @@
 package tg.bot.activity.common;
 
-import com.bot.sup.service.callbackquery.Callback;
 import org.springframework.stereotype.Service;
+import tg.bot.activity.service.callbackquery.Callback;
 
 import java.util.HashMap;
 import java.util.List;

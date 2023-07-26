@@ -1,13 +1,14 @@
 package tg.bot.activity.service.activity.format;
 
-import com.bot.sup.model.dto.tg.ActivityFormatDto;
-import com.bot.sup.model.entity.ActivityFormat;
 import org.springframework.stereotype.Service;
+import tg.bot.activity.model.dto.tg.ActivityFormatDto;
+import tg.bot.activity.model.entity.ActivityFormat;
 
 import java.util.List;
 
 @Service
 public interface ActivityFormatService {
+
     void save(ActivityFormat activityFormat);
 
     List<ActivityFormatDto> getAllActivityFormat();

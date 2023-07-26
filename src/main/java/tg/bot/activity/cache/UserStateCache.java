@@ -1,6 +1,5 @@
 package tg.bot.activity.cache;
 
-import com.bot.sup.model.UserState;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.Cache;
@@ -9,6 +8,7 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import tg.bot.activity.model.UserState;
 
 import java.util.Optional;
 
@@ -16,6 +16,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class UserStateCache {
+
     private final CacheManager cacheManager;
 
     @Cacheable(value = "states")

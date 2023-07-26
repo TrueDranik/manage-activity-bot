@@ -1,8 +1,5 @@
 package tg.bot.activity.api.rest;
 
-import com.bot.sup.exception.NotEnoughFreePlacesException;
-import com.bot.sup.exception.NotValidParamParticipantsException;
-import com.bot.sup.model.ErrorResponse;
 import feign.FeignException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
@@ -11,6 +8,9 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
+import tg.bot.activity.exception.NotEnoughFreePlacesException;
+import tg.bot.activity.exception.NotValidParamParticipantsException;
+import tg.bot.activity.model.ErrorResponse;
 
 import javax.persistence.EntityNotFoundException;
 import javax.servlet.http.HttpServletResponse;
@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 @ControllerAdvice
 @ResponseBody
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Object> handleException(Exception exception) {
         log.error(exception.getMessage(), exception);

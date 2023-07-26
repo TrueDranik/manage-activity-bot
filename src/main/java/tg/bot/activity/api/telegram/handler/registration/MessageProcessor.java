@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.util.concurrent.ExecutionException;
 
 public interface MessageProcessor {
+
     BotApiMethod<?> processInputMessage(Message message, Object entity) throws IOException, ExecutionException, InterruptedException;
 
     BotApiMethod<?> processInvalidInputMessage(Long chatId);

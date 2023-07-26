@@ -8,6 +8,7 @@ import java.util.List;
 @Getter
 @Setter
 public class AboutUsDto {
+
     private Long id;
     private String fullDescription;
     private String title;

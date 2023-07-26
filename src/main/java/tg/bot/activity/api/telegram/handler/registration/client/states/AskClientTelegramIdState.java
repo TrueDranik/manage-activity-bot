@@ -1,26 +1,27 @@
 package tg.bot.activity.api.telegram.handler.registration.client.states;
 
-import com.bot.sup.util.KeyboardUtil;
-import com.bot.sup.cache.UserStateCache;
-import com.bot.sup.common.enums.CallbackEnum;
-import com.bot.sup.common.enums.states.ClientRecordStateEnum;
-import com.bot.sup.model.UserState;
-import com.bot.sup.model.entity.Client;
-import com.bot.sup.repository.ClientRepository;
-import com.bot.sup.service.MessageService;
-import com.bot.sup.service.client.ClientServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.User;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import tg.bot.activity.cache.UserStateCache;
+import tg.bot.activity.common.enums.CallbackEnum;
+import tg.bot.activity.common.enums.states.ClientRecordStateEnum;
+import tg.bot.activity.model.UserState;
+import tg.bot.activity.model.entity.Client;
+import tg.bot.activity.repository.ClientRepository;
+import tg.bot.activity.service.MessageService;
+import tg.bot.activity.service.client.ClientServiceImpl;
+import tg.bot.activity.util.KeyboardUtil;
 
 import java.util.Optional;
 
 @Component
 @RequiredArgsConstructor
 public class AskClientTelegramIdState implements ClientRecordMessageProcessor {
+
     private final MessageService messageService;
     private final ClientRepository clientRepository;
     private final ClientServiceImpl clientService;

@@ -1,18 +1,19 @@
 package tg.bot.activity.mapper;
 
-import com.bot.sup.model.dto.tg.ActivityDto;
-import com.bot.sup.model.entity.Activity;
-import com.bot.sup.repository.ActivityFormatRepository;
-import com.bot.sup.repository.ActivityTypeRepository;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.springframework.beans.factory.annotation.Autowired;
+import tg.bot.activity.model.dto.tg.ActivityDto;
+import tg.bot.activity.model.entity.Activity;
+import tg.bot.activity.repository.ActivityFormatRepository;
+import tg.bot.activity.repository.ActivityTypeRepository;
 
 import javax.persistence.EntityNotFoundException;
 
 @Mapper(componentModel = "spring")
 public abstract class ActivityMapper implements BaseMapper<Activity, ActivityDto> {
+
     @Autowired
     ActivityTypeRepository activityTypeRepository;
     @Autowired

@@ -1,15 +1,14 @@
 package tg.bot.activity.service.route.impl;
 
-import com.bot.sup.mapper.RouteMapper;
-import com.bot.sup.model.dto.tg.RouteDto;
-import com.bot.sup.model.entity.Route;
-import com.bot.sup.model.entity.Route_;
-import com.bot.sup.repository.RouteRepository;
-import com.bot.sup.repository.ScheduleRepository;
-import com.bot.sup.service.route.RouteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import tg.bot.activity.mapper.RouteMapper;
+import tg.bot.activity.model.dto.tg.RouteDto;
+import tg.bot.activity.model.entity.Route;
+import tg.bot.activity.repository.RouteRepository;
+import tg.bot.activity.repository.ScheduleRepository;
+import tg.bot.activity.service.route.RouteService;
 
 import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
@@ -18,6 +17,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class RouteServiceImpl implements RouteService {
+
     private final RouteRepository routeRepository;
     private final ScheduleRepository scheduleRepository;
     private final RouteMapper routeMapper;

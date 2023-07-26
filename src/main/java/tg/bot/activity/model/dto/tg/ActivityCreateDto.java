@@ -11,6 +11,7 @@ import java.math.BigDecimal;
 @Setter
 @Schema(description = "Информация об активности")
 public class ActivityCreateDto {
+
     @Schema(description = "Name activity")
     @Size(min = 0, max = 255)
     private String name;

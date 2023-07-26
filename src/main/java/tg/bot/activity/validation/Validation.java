@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 
 @UtilityClass
 public class Validation {
+
     private static final String REGEX_LETTERS = "^(?![\\d+_@.-]+$)[a-zA-Z а-яёА-ЯЁ+_@.-]*$";
     private static final String REGEX_PHONE = "^(\\+7)?[489][0-9]{2}[0-9]{3}[0-9]{2}[0-9]{2}$";
     private static final Pattern PATTERN_NAME = Pattern.compile(REGEX_LETTERS);

@@ -1,17 +1,18 @@
 package tg.bot.activity.api.telegram.handler.registration.client.states;
 
-import com.bot.sup.cache.UserStateCache;
-import com.bot.sup.common.enums.states.ClientRecordStateEnum;
-import com.bot.sup.model.UserState;
-import com.bot.sup.service.MessageService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Message;
+import tg.bot.activity.cache.UserStateCache;
+import tg.bot.activity.common.enums.states.ClientRecordStateEnum;
+import tg.bot.activity.model.UserState;
+import tg.bot.activity.service.MessageService;
 
 @Component
 @RequiredArgsConstructor
 public class StartClientProcessorRecordState implements ClientRecordMessageProcessor {
+
     private final MessageService messageService;
     private final UserStateCache userStateCache;
 

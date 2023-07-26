@@ -15,6 +15,7 @@ import javax.persistence.OneToOne;
 @Setter
 @Entity
 public class ActivityFormat {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

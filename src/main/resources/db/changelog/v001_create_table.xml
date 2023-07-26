@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
+      http://www.liquibase.org/xml/ns/pro
+      http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
+
+    <changeSet  author="alexSmurov"  id="1" >
+
+        <createTable tableName="activity_format">
+            <column autoIncrement="true" name="id"  type="bigint">
+                <constraints  nullable="false"  primaryKey="true"  unique="true"/>
+            </column>
+            <column  name="name"  type="VARCHAR(255)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="description"  type="VARCHAR(255)">
+                <constraints  nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="activity_type">
+            <column autoIncrement="true" name="id"  type="bigint">
+                <constraints  nullable="false"  primaryKey="true"  unique="true"/>
+            </column>
+            <column  name="name"  type="VARCHAR(255)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="description"  type="VARCHAR(255)">
+                <constraints  nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="route">
+            <column autoIncrement="true" name="id"  type="bigint">
+                <constraints  nullable="false"  primaryKey="true"  unique="true"/>
+            </column>
+            <column  name="name"  type="VARCHAR(255)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="start_point_coordinates"  type="VARCHAR(255)"/>
+            <column  name="finish_point_coordinates"  type="VARCHAR(255)"/>
+            <column  name="start_point_name"  type="VARCHAR(255)"/>
+            <column  name="finish_point_name"  type="VARCHAR(255)"/>
+            <column  name="map_link"  type="VARCHAR(2048)"/>
+            <column  name="length"  type="VARCHAR"/>
+        </createTable>
+
+        <createTable tableName="activity">
+            <column autoIncrement="true" name="id"  type="bigint">
+                <constraints  nullable="false"  primaryKey="true"  unique="true"/>
+            </column>
+            <column  name="name"  type="VARCHAR(255)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="seasonality"  type="VARCHAR">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="activity_format_id"  type="bigint">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="activity_type_id"  type="bigint">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="description"  type="VARCHAR(3000)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="route_id"  type="bigint">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="duration"  type="VARCHAR(10)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="age"  type="VARCHAR(5)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="complexity"  type="int">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="price"  type="int">
+                <constraints  nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="client">
+            <column autoIncrement="true" name="id"  type="bigint">
+                <constraints  nullable="false"  primaryKey="true"  unique="true"/>
+            </column>
+            <column  name="first_name"  type="VARCHAR(30)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="last_name"  type="VARCHAR(30)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="birth_date"  type="DATE">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="telegram_id"  type="INT">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="username"  type="VARCHAR(30)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="phone_number"  type="VARCHAR(255)">
+                <constraints  nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="booking">
+            <column autoIncrement="true" name="id"  type="bigint">
+                <constraints  nullable="false"  primaryKey="true"  unique="true"/>
+            </column>
+            <column  name="client_id"  type="bigint">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="invited_users"  type="bigint">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="payment_status"  type="BOOLEAN">
+                <constraints  nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="instructor">
+            <column autoIncrement="true" name="id"  type="bigint">
+                <constraints  nullable="false"  primaryKey="true"  unique="true"/>
+            </column>
+            <column  name="first_name"  type="VARCHAR(30)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="last_name"  type="VARCHAR(30)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="telegram_id"  type="INT">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="username"  type="VARCHAR(30)">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="phone_number"  type="VARCHAR(255)">
+                <constraints  nullable="false"/>
+            </column>
+        </createTable>
+
+        <createTable tableName="schedule">
+            <column autoIncrement="true" name="id"  type="bigint">
+                <constraints  nullable="false"  primaryKey="true"  unique="true"/>
+            </column>
+            <column  name="activity_id"  type="bigint">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="event_date"  type="DATE">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="event_time"  type="TIME">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="participants"  type="INT">
+            </column>
+        </createTable>
+
+        <createTable tableName="schedule_to_instructor">
+            <column autoIncrement="true" name="id"  type="bigint">
+                <constraints  nullable="false"  primaryKey="true"  unique="true"/>
+            </column>
+            <column  name="id_schedule"  type="bigint">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="id_instructor"  type="bigint">
+                <constraints  nullable="false"/>
+            </column>
+        </createTable>
+
+
+        <createTable tableName="Schedule_to_client">
+            <column autoIncrement="true" name="id"  type="bigint">
+                <constraints  nullable="false"  primaryKey="true"  unique="true"/>
+            </column>
+            <column  name="id_schedule"  type="bigint">
+                <constraints  nullable="false"/>
+            </column>
+            <column  name="id_client"  type="bigint">
+                <constraints  nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseColumnNames="activity_format_id"
+                                 baseTableName="activity"
+                                 constraintName="fk_activity_activity_format_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="activity_format"/>
+        <addForeignKeyConstraint baseColumnNames="activity_type_id"
+                                 baseTableName="activity"
+                                 constraintName="fk_activity_activity_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="activity_type"/>
+        <addForeignKeyConstraint baseColumnNames="route_id"
+                                 baseTableName="activity"
+                                 constraintName="fk_activity_route_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="route"/>
+
+        <addForeignKeyConstraint baseColumnNames="client_id"
+                                 baseTableName="booking"
+                                 constraintName="fk_booking_client_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="client"/>
+
+        <addForeignKeyConstraint baseColumnNames="activity_id"
+                                 baseTableName="schedule"
+                                 constraintName="fk_schedule_activity_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="activity"/>
+
+        <addForeignKeyConstraint baseColumnNames="id_schedule"
+                                 baseTableName="schedule_to_instructor"
+                                 constraintName="fk_schedule_to_instructor_schedule_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="schedule"/>
+        <addForeignKeyConstraint baseColumnNames="id_instructor"
+                                 baseTableName="schedule_to_instructor"
+                                 constraintName="fk_schedule_to_instructor_instructor_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="instructor"/>
+
+        <addForeignKeyConstraint baseColumnNames="id_schedule"
+                                 baseTableName="Schedule_to_client"
+                                 constraintName="fk_Schedule_to_client_schedule_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="schedule"/>
+        <addForeignKeyConstraint baseColumnNames="id_client"
+                                 baseTableName="Schedule_to_client"
+                                 constraintName="fk_Schedule_to_client_client_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="client"/>
+
+    </changeSet>
+
+</databaseChangeLog>

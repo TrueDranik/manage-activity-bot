@@ -1,17 +1,17 @@
 package tg.bot.activity.api.telegram.handler.registration.instructor;
 
-import com.bot.sup.api.telegram.handler.registration.MessageProcessor;
-import com.bot.sup.api.telegram.handler.registration.instructor.states.InstructorMessageProcessor;
-import com.bot.sup.cache.UserStateCache;
-import com.bot.sup.common.enums.states.InstructorStateEnum;
-import com.bot.sup.model.UserState;
-import com.bot.sup.model.entity.Instructor;
-import com.bot.sup.util.MessageProcessorUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Message;
+import tg.bot.activity.api.telegram.handler.registration.MessageProcessor;
+import tg.bot.activity.api.telegram.handler.registration.instructor.states.InstructorMessageProcessor;
+import tg.bot.activity.cache.UserStateCache;
+import tg.bot.activity.common.enums.states.InstructorStateEnum;
+import tg.bot.activity.model.UserState;
+import tg.bot.activity.model.entity.Instructor;
+import tg.bot.activity.util.MessageProcessorUtil;
 
 import java.util.Map;
 
@@ -19,6 +19,7 @@ import java.util.Map;
 @Component
 @RequiredArgsConstructor
 public class FillingInstructor implements InstructorHandleRegistration {
+
     private final UserStateCache userStateCache;
     private final Map<InstructorStateEnum, InstructorMessageProcessor> instructorMessageProcessorMap;
 

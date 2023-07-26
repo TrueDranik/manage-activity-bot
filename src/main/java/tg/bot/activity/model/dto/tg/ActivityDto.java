@@ -1,15 +1,16 @@
 package tg.bot.activity.model.dto.tg;
 
-import com.bot.sup.model.entity.ActivityFormat;
-import com.bot.sup.model.entity.ActivityType;
 import lombok.Getter;
 import lombok.Setter;
+import tg.bot.activity.model.entity.ActivityFormat;
+import tg.bot.activity.model.entity.ActivityType;
 
 import java.math.BigDecimal;
 
 @Getter
 @Setter
 public class ActivityDto {
+
     private Long id;
     private String name;
     private String seasonality;

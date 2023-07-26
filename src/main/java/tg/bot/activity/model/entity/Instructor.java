@@ -20,6 +20,7 @@ import java.util.Set;
 @Setter
 @Entity
 public class Instructor {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

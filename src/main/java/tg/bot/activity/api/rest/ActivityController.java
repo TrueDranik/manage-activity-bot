@@ -1,15 +1,24 @@
 package tg.bot.activity.api.rest;
 
-import com.bot.sup.model.ActivityRequestParams;
-import com.bot.sup.model.dto.tg.ActivityDto;
-import com.bot.sup.service.activity.ActivityService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springdoc.api.annotations.ParameterObject;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+import tg.bot.activity.model.ActivityRequestParams;
+import tg.bot.activity.model.dto.tg.ActivityDto;
+import tg.bot.activity.service.activity.ActivityService;
 
 import java.util.List;
 
@@ -19,6 +28,7 @@ import java.util.List;
 @RequestMapping(value = "/activity")
 @Tag(name = "Активность")
 public class ActivityController {
+
     private final ActivityService activityService;
 
     @GetMapping

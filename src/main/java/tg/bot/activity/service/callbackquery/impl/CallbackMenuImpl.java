@@ -1,20 +1,21 @@
 package tg.bot.activity.service.callbackquery.impl;
 
-import com.bot.sup.api.telegram.handler.impl.HandleMainMenuImpl;
-import com.bot.sup.cache.UserStateCache;
-import com.bot.sup.common.enums.CallbackEnum;
-import com.bot.sup.common.properties.message.MainMessageProperties;
-import com.bot.sup.service.callbackquery.Callback;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.ParseMode;
 import org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod;
 import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageText;
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
+import tg.bot.activity.api.telegram.handler.impl.HandleMainMenuImpl;
+import tg.bot.activity.cache.UserStateCache;
+import tg.bot.activity.common.enums.CallbackEnum;
+import tg.bot.activity.common.properties.message.MainMessageProperties;
+import tg.bot.activity.service.callbackquery.Callback;
 
 @Service
 @RequiredArgsConstructor
 public class CallbackMenuImpl implements Callback {
+
     private final HandleMainMenuImpl handleMainMenu;
     private final MainMessageProperties mainMessageProperties;
     private final UserStateCache userStateCache;

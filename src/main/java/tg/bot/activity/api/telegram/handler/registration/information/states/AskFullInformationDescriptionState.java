@@ -1,16 +1,16 @@
 package tg.bot.activity.api.telegram.handler.registration.information.states;
 
-import com.bot.sup.common.enums.CallbackEnum;
-import com.bot.sup.common.enums.states.InformationAboutUsStateEnum;
-import com.bot.sup.model.entity.AboutUs;
-import com.bot.sup.service.aboutUs.AboutUsService;
-import com.bot.sup.service.MessageService;
-import com.bot.sup.util.KeyboardUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.meta.api.methods.BotApiMethod;
 import org.telegram.telegrambots.meta.api.objects.Message;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
+import tg.bot.activity.common.enums.CallbackEnum;
+import tg.bot.activity.common.enums.states.InformationAboutUsStateEnum;
+import tg.bot.activity.model.entity.AboutUs;
+import tg.bot.activity.service.MessageService;
+import tg.bot.activity.service.aboutUs.AboutUsService;
+import tg.bot.activity.util.KeyboardUtil;
 
 @Component
 @RequiredArgsConstructor

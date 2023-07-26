@@ -1,9 +1,9 @@
 package tg.bot.activity.model.dto.tg;
 
-import com.bot.sup.model.entity.Activity;
-import com.bot.sup.model.entity.Route;
 import lombok.Getter;
 import lombok.Setter;
+import tg.bot.activity.model.entity.Activity;
+import tg.bot.activity.model.entity.Route;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -12,6 +12,7 @@ import java.util.Set;
 @Getter
 @Setter
 public class ScheduleDto {
+
     private Long id;
     private Activity activity;
     private LocalDate eventDate;

@@ -1,14 +1,14 @@
 package tg.bot.activity.service.client;
 
-import com.bot.sup.mapper.BookingMapper;
-import com.bot.sup.mapper.ClientMapper;
-import com.bot.sup.model.dto.tg.BookingCreateDto;
-import com.bot.sup.model.dto.tg.ClientCreateDto;
-import com.bot.sup.model.dto.tg.ClientDto;
-import com.bot.sup.model.entity.Client;
-import com.bot.sup.repository.ClientRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import tg.bot.activity.mapper.BookingMapper;
+import tg.bot.activity.mapper.ClientMapper;
+import tg.bot.activity.model.dto.tg.BookingCreateDto;
+import tg.bot.activity.model.dto.tg.ClientCreateDto;
+import tg.bot.activity.model.dto.tg.ClientDto;
+import tg.bot.activity.model.entity.Client;
+import tg.bot.activity.repository.ClientRepository;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
@@ -16,6 +16,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ClientServiceImpl implements ClientService {
+
     private final BookingMapper bookingMapper;
     private final ClientMapper clientMapper;
     private final ClientRepository clientRepository;

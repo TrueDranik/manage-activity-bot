@@ -19,6 +19,7 @@ public class SpecificationBuilder<T> {
     private final Root<T> root;
     private final CriteriaQuery<?> query;
     private final CriteriaBuilder builder;
+
     List<Predicate> predicates = new ArrayList<>();
 
     public void addEqualsPredicateIfNotNull(String route, Object params) {

@@ -1,13 +1,5 @@
 package tg.bot.activity.service.callbackquery.impl.instructor;
 
-import com.bot.sup.common.enums.CallbackEnum;
-import com.bot.sup.common.enums.PhotoSizeEnum;
-import com.bot.sup.common.properties.message.MainMessageProperties;
-import com.bot.sup.model.entity.Instructor;
-import com.bot.sup.service.callbackquery.Callback;
-import com.bot.sup.service.files.photo.PhotoService;
-import com.bot.sup.service.instructor.InstructorService;
-import com.bot.sup.util.ImageUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.ParseMode;
@@ -17,15 +9,24 @@ import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.InputFile;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
+import tg.bot.activity.common.enums.CallbackEnum;
+import tg.bot.activity.common.enums.PhotoSizeEnum;
+import tg.bot.activity.common.properties.message.MainMessageProperties;
+import tg.bot.activity.model.entity.Instructor;
+import tg.bot.activity.service.callbackquery.Callback;
+import tg.bot.activity.service.files.photo.PhotoService;
+import tg.bot.activity.service.instructor.InstructorService;
+import tg.bot.activity.util.ImageUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.bot.sup.common.enums.CallbackEnum.INSTRUCTOR_OPTION;
+import static tg.bot.activity.common.enums.CallbackEnum.INSTRUCTOR_OPTION;
 
 @Service
 @RequiredArgsConstructor
 public class CallbackInstructorsOptionImpl implements Callback {
+
     private final MainMessageProperties mainMessageProperties;
     private final InstructorService instructorService;
     private final PhotoService photoService;

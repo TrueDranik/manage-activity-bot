@@ -1,13 +1,5 @@
 package tg.bot.activity.service;
 
-import com.bot.sup.api.telegram.handler.impl.HandleMainMenuImpl;
-import com.bot.sup.api.telegram.handler.impl.HandleScheduleInfoImpl;
-import com.bot.sup.common.enums.CallbackEnum;
-import com.bot.sup.common.properties.message.MainMessageProperties;
-import com.bot.sup.common.properties.message.ScheduleMessageProperties;
-import com.bot.sup.model.entity.*;
-import com.bot.sup.repository.ScheduleRepository;
-import com.bot.sup.service.activity.format.impl.ActivityFormatServiceImpl;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.ParseMode;
@@ -16,6 +8,18 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
+import tg.bot.activity.api.telegram.handler.impl.HandleMainMenuImpl;
+import tg.bot.activity.api.telegram.handler.impl.HandleScheduleInfoImpl;
+import tg.bot.activity.common.enums.CallbackEnum;
+import tg.bot.activity.common.properties.message.MainMessageProperties;
+import tg.bot.activity.common.properties.message.ScheduleMessageProperties;
+import tg.bot.activity.model.entity.Activity;
+import tg.bot.activity.model.entity.ActivityFormat;
+import tg.bot.activity.model.entity.ActivityType;
+import tg.bot.activity.model.entity.Route;
+import tg.bot.activity.model.entity.Schedule;
+import tg.bot.activity.repository.ScheduleRepository;
+import tg.bot.activity.service.activity.format.impl.ActivityFormatServiceImpl;
 
 import javax.persistence.EntityNotFoundException;
 import java.time.LocalDate;
@@ -29,6 +33,7 @@ import java.util.Optional;
 @Service
 @RequiredArgsConstructor
 public class GenerateKeyboard {
+
     private final Bot bot;
     private final MainMessageProperties mainMessageProperties;
     private final HandleMainMenuImpl handleMainMenu;
@@ -36,7 +41,6 @@ public class GenerateKeyboard {
     private final ScheduleRepository scheduleRepository;
     private final ActivityFormatServiceImpl activityFormatService;
     private final ScheduleMessageProperties scheduleMessageProperties;
-
 
     public Integer getMessageId(Long chatId) {
         Update update = bot.getUserUpdate();

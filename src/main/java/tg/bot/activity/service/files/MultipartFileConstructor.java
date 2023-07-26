@@ -7,8 +7,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-
 public class MultipartFileConstructor {
+
     public static MultipartFile getNewFile(String fileName, MultipartFile currentFile) {
         return new MultipartFile() {
             @Override

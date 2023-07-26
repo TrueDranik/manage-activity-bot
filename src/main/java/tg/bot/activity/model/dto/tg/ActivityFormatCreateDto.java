@@ -8,6 +8,7 @@ import lombok.Setter;
 @Setter
 @Schema(title = "Формат активности")
 public class ActivityFormatCreateDto {
+
     @Schema(title = "Именование формата", defaultValue = "Format")
     private String name;
     @Schema(title = "Доп. информация для формата", nullable = true, defaultValue = " ")

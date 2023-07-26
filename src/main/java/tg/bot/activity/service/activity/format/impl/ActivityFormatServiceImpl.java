@@ -1,14 +1,13 @@
 package tg.bot.activity.service.activity.format.impl;
 
-import com.bot.sup.mapper.ActivityFormatMapper;
-import com.bot.sup.model.dto.tg.ActivityFormatDto;
-import com.bot.sup.model.entity.ActivityFormat;
-import com.bot.sup.model.entity.ActivityFormat_;
-import com.bot.sup.repository.ActivityFormatRepository;
-import com.bot.sup.service.activity.format.ActivityFormatService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import tg.bot.activity.mapper.ActivityFormatMapper;
+import tg.bot.activity.model.dto.tg.ActivityFormatDto;
+import tg.bot.activity.model.entity.ActivityFormat;
+import tg.bot.activity.repository.ActivityFormatRepository;
+import tg.bot.activity.service.activity.format.ActivityFormatService;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
@@ -16,6 +15,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ActivityFormatServiceImpl implements ActivityFormatService {
+
     private final ActivityFormatRepository activityFormatRepository;
     private final ActivityFormatMapper activityFormatMapper;
 

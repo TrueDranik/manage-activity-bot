@@ -9,6 +9,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 public class BookingDto {
+
     private Long id;
     private ClientDto client;
     private int invitedUsers;

@@ -1,12 +1,12 @@
 package tg.bot.activity.api.rest;
 
-import com.bot.sup.model.dto.tg.RouteDto;
-import com.bot.sup.service.route.RouteService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+import tg.bot.activity.model.dto.tg.RouteDto;
+import tg.bot.activity.service.route.RouteService;
 
 import java.util.List;
 
@@ -16,6 +16,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @Tag(name = "Маршрут")
 public class RouteController {
+
     private final RouteService routeService;
 
     @GetMapping

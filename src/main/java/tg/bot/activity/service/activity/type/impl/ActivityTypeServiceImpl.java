@@ -1,14 +1,13 @@
 package tg.bot.activity.service.activity.type.impl;
 
-import com.bot.sup.mapper.ActivityTypeMapper;
-import com.bot.sup.model.dto.tg.ActivityTypeDto;
-import com.bot.sup.model.entity.ActivityType;
-import com.bot.sup.model.entity.ActivityType_;
-import com.bot.sup.repository.ActivityTypeRepository;
-import com.bot.sup.service.activity.type.ActivityTypeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import tg.bot.activity.mapper.ActivityTypeMapper;
+import tg.bot.activity.model.dto.tg.ActivityTypeDto;
+import tg.bot.activity.model.entity.ActivityType;
+import tg.bot.activity.repository.ActivityTypeRepository;
+import tg.bot.activity.service.activity.type.ActivityTypeService;
 
 import javax.persistence.EntityNotFoundException;
 import java.util.List;
@@ -16,6 +15,7 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ActivityTypeServiceImpl implements ActivityTypeService {
+
     private final ActivityTypeRepository activityTypeRepository;
     private final ActivityTypeMapper activityTypeMapper;
 

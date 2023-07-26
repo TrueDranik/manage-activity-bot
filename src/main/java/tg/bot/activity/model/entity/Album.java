@@ -18,11 +18,11 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Album {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private Boolean isActive;
     private Boolean isChangeable;
-
 }

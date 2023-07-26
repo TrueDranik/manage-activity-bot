@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:pro="http://www.liquibase.org/xml/ns/pro"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd
+      http://www.liquibase.org/xml/ns/pro
+      http://www.liquibase.org/xml/ns/pro/liquibase-pro-4.1.xsd">
+
+    <changeSet author="alexSmurov" id="1">
+
+        <createTable tableName="image_data">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar"/>
+            <column name="type" type="varchar"/>
+            <column name="imagedata" type="bytea"/>
+        </createTable>
+
+        <addColumn tableName="route">
+            <column name="image_data_id" type="bigint">
+                <constraints nullable="true"/>
+            </column>
+        </addColumn>
+
+        <addNotNullConstraint
+                tableName="activity"
+                columnName="active"/>
+
+        <addNotNullConstraint
+                tableName="route"
+                columnName="active"/>
+
+        <addNotNullConstraint
+                tableName="schedule"
+                columnName="active"/>
+
+
+        <addForeignKeyConstraint baseTableName="route"
+                                 baseColumnNames="image_data_id"
+                                 constraintName="fk_route_image_data_id"
+                                 referencedTableName="image_data"
+                                 referencedColumnNames="id"/>
+    </changeSet>
+
+
+
+</databaseChangeLog>

@@ -1,18 +1,19 @@
 package tg.bot.activity.mapper;
 
-import com.bot.sup.common.enums.PhotoSizeEnum;
-import com.bot.sup.model.dto.tg.AlbumDto;
-import com.bot.sup.model.entity.Album;
-import com.bot.sup.model.entity.Photo;
-import com.bot.sup.repository.PhotoRepository;
-import com.bot.sup.service.files.photo.PhotoService;
 import org.mapstruct.AfterMapping;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingTarget;
 import org.springframework.beans.factory.annotation.Autowired;
+import tg.bot.activity.common.enums.PhotoSizeEnum;
+import tg.bot.activity.model.dto.tg.AlbumDto;
+import tg.bot.activity.model.entity.Album;
+import tg.bot.activity.model.entity.Photo;
+import tg.bot.activity.repository.PhotoRepository;
+import tg.bot.activity.service.files.photo.PhotoService;
 
 @Mapper(componentModel = "spring")
 public abstract class AlbumMapper implements BaseMapper<Album, AlbumDto> {
+
     @Autowired
     PhotoRepository photoRepository;
     @Autowired

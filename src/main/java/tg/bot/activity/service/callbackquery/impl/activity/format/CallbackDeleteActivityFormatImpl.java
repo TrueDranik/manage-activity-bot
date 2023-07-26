@@ -1,12 +1,5 @@
 package tg.bot.activity.service.callbackquery.impl.activity.format;
 
-import com.bot.sup.common.enums.CallbackEnum;
-import com.bot.sup.common.properties.message.ActivityMessageProperties;
-import com.bot.sup.common.properties.message.MainMessageProperties;
-import com.bot.sup.service.activity.format.ActivityFormatService;
-import com.bot.sup.service.callbackquery.Callback;
-import com.bot.sup.service.files.AlbumService;
-import com.bot.sup.service.files.photo.PhotoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.telegram.telegrambots.meta.api.methods.PartialBotApiMethod;
@@ -14,22 +7,28 @@ import org.telegram.telegrambots.meta.api.methods.updatingmessages.EditMessageTe
 import org.telegram.telegrambots.meta.api.objects.CallbackQuery;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.InlineKeyboardButton;
+import tg.bot.activity.common.enums.CallbackEnum;
+import tg.bot.activity.common.properties.message.ActivityMessageProperties;
+import tg.bot.activity.common.properties.message.MainMessageProperties;
+import tg.bot.activity.service.activity.format.ActivityFormatService;
+import tg.bot.activity.service.callbackquery.Callback;
+import tg.bot.activity.service.files.AlbumService;
+import tg.bot.activity.service.files.photo.PhotoService;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static com.bot.sup.common.enums.CallbackEnum.DELETE_ACTIVITY_FORMAT;
+import static tg.bot.activity.common.enums.CallbackEnum.DELETE_ACTIVITY_FORMAT;
 
 @RequiredArgsConstructor
 @Service
 public class CallbackDeleteActivityFormatImpl implements Callback {
+
     private final MainMessageProperties mainMessageProperties;
     private final ActivityMessageProperties activityMessageProperties;
     private final ActivityFormatService activityFormatService;
-
     private final PhotoService photoService;
-
     private final AlbumService albumService;
 
     @Override

@@ -1,8 +1,8 @@
 package tg.bot.activity.model.entity;
 
-import com.bot.sup.common.enums.PaymentTypeEnum;
 import lombok.Getter;
 import lombok.Setter;
+import tg.bot.activity.common.enums.PaymentTypeEnum;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,6 +13,7 @@ import javax.persistence.Id;
 @Setter
 @Entity
 public class Payment {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

@@ -15,6 +15,7 @@ import javax.persistence.ManyToOne;
 @Setter
 @Entity
 public class ActivityType {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

@@ -1,9 +1,9 @@
 package tg.bot.activity.repository.specification;
 
-import com.bot.sup.model.RouteActivityRequestParams;
-import com.bot.sup.model.entity.Schedule;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.jpa.domain.Specification;
+import tg.bot.activity.model.RouteActivityRequestParams;
+import tg.bot.activity.model.entity.Schedule;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -12,6 +12,7 @@ import javax.persistence.criteria.Root;
 
 @RequiredArgsConstructor
 public class ScheduleSpecification implements Specification<Schedule> {
+
     private final RouteActivityRequestParams params;
 
     @Override

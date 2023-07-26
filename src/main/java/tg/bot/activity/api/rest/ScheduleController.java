@@ -1,9 +1,5 @@
 package tg.bot.activity.api.rest;
 
-import com.bot.sup.model.RouteActivityRequestParams;
-import com.bot.sup.model.dto.tg.ScheduleCreateDto;
-import com.bot.sup.model.dto.tg.ScheduleDto;
-import com.bot.sup.service.schedule.ScheduleService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -20,6 +16,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import tg.bot.activity.model.RouteActivityRequestParams;
+import tg.bot.activity.model.dto.tg.ScheduleCreateDto;
+import tg.bot.activity.model.dto.tg.ScheduleDto;
+import tg.bot.activity.service.schedule.ScheduleService;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -31,6 +31,7 @@ import java.util.List;
 @RequestMapping("/schedule")
 @Tag(name = "Расписание")
 public class ScheduleController {
+
     private final ScheduleService scheduleService;
 
     @GetMapping("/telegramId/{telegramId}")
