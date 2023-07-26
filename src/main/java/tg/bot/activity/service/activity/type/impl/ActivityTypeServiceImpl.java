@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import tg.bot.activity.mapper.ActivityTypeMapper;
 import tg.bot.activity.model.dto.tg.ActivityTypeDto;
 import tg.bot.activity.model.entity.ActivityType;
+import tg.bot.activity.model.entity.ActivityType_;
 import tg.bot.activity.repository.ActivityTypeRepository;
 import tg.bot.activity.service.activity.type.ActivityTypeService;
 

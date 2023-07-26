@@ -12,6 +12,7 @@ import tg.bot.activity.model.ScheduleParams;
 import tg.bot.activity.model.dto.tg.ScheduleCreateDto;
 import tg.bot.activity.model.dto.tg.ScheduleDto;
 import tg.bot.activity.model.entity.Schedule;
+import tg.bot.activity.model.entity.Schedule_;
 import tg.bot.activity.model.entity.SelectedSchedule;
 import tg.bot.activity.repository.ScheduleRepository;
 import tg.bot.activity.repository.SelectedScheduleRepository;

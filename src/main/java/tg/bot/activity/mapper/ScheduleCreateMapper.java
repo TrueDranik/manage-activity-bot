@@ -6,6 +6,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.springframework.beans.factory.annotation.Autowired;
 import tg.bot.activity.model.dto.tg.ScheduleCreateDto;
+import tg.bot.activity.model.entity.Instructor;
 import tg.bot.activity.model.entity.Schedule;
 import tg.bot.activity.repository.ActivityRepository;
 import tg.bot.activity.repository.InstructorRepository;

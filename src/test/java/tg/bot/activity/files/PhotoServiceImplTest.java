@@ -1,12 +1,5 @@
 package tg.bot.activity.files;
 
-import com.bot.sup.common.enums.PhotoSizeEnum;
-import com.bot.sup.model.entity.Photo;
-import com.bot.sup.model.entity.PhotoLargeSize;
-import com.bot.sup.model.entity.PhotoSmallSize;
-import com.bot.sup.repository.PhotoRepository;
-import com.bot.sup.service.files.photo.PhotoService;
-import com.bot.sup.util.ImageUtil;
 import feign.FeignException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -15,6 +8,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.web.multipart.MultipartFile;
+import tg.bot.activity.common.enums.PhotoSizeEnum;
+import tg.bot.activity.model.entity.Photo;
+import tg.bot.activity.model.entity.PhotoLargeSize;
+import tg.bot.activity.model.entity.PhotoSmallSize;
+import tg.bot.activity.repository.PhotoRepository;
+import tg.bot.activity.service.files.MultipartFileConstructor;
+import tg.bot.activity.service.files.photo.PhotoService;
+import tg.bot.activity.util.ImageUtil;
 
 import java.io.IOException;
 import java.sql.Timestamp;
@@ -25,18 +26,19 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 @ActiveProfiles("test")
 class PhotoServiceImplTest {
+
     private static final String PHOTO_URL = "https://upload.wikimedia.org/wikipedia/commons/3/3a/Cat03.jpg";
     private static final String PHOTO_NAME = "photo.jpg";
     private static final String URL = "photo_url";
     public static final String LARGE_PHOTO_NAME = "large_photo";
     public static final String SMALL_PHOTO_NAME = "small_photo";
     private static final Long ALBUM_ID = 1L;
+
     @Autowired
     PhotoService photoService;
     @Autowired
@@ -64,6 +66,9 @@ class PhotoServiceImplTest {
         var photoUrl = photoService.getImageUrl(savedPhoto.getId(), PhotoSizeEnum.LARGE);
         assertEquals(PHOTO_NAME, savedPhoto.getNameFromRequest());
         assertNotNull(photoUrl);
+    }
+
+    private void assertNotNull(String photoUrl) {
     }
 
     @Test

@@ -15,6 +15,8 @@ import tg.bot.activity.common.properties.TelegramProperties;
 import tg.bot.activity.common.properties.message.MainMessageProperties;
 import tg.bot.activity.common.properties.message.ScheduleMessageProperties;
 import tg.bot.activity.model.entity.Activity;
+import tg.bot.activity.model.entity.ActivityFormat;
+import tg.bot.activity.model.entity.ActivityType;
 import tg.bot.activity.model.entity.Route;
 import tg.bot.activity.model.entity.Schedule;
 import tg.bot.activity.repository.ScheduleRepository;

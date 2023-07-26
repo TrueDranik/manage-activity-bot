@@ -17,6 +17,7 @@ import tg.bot.activity.mapper.PaymentMapper;
 import tg.bot.activity.model.dto.PaymentDto;
 import tg.bot.activity.model.dto.PaymentUpdateDto;
 import tg.bot.activity.model.entity.Payment;
+import tg.bot.activity.model.entity.Payment_;
 import tg.bot.activity.service.payment.PaymentService;
 
 import java.util.Map;

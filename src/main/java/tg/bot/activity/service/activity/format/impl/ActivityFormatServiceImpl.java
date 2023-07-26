@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import tg.bot.activity.mapper.ActivityFormatMapper;
 import tg.bot.activity.model.dto.tg.ActivityFormatDto;
 import tg.bot.activity.model.entity.ActivityFormat;
+import tg.bot.activity.model.entity.ActivityFormat_;
 import tg.bot.activity.repository.ActivityFormatRepository;
 import tg.bot.activity.service.activity.format.ActivityFormatService;
 

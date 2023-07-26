@@ -1,6 +1,5 @@
 package tg.bot.activity.repository;
 
-import com.bot.sup.model.entity.Photo;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,6 +10,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
+import tg.bot.activity.model.entity.Photo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 

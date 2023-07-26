@@ -9,6 +9,7 @@ import tg.bot.activity.api.telegram.handler.registration.MessageProcessor;
 import tg.bot.activity.api.telegram.handler.registration.information.states.InformationAboutUsMessageProcessor;
 import tg.bot.activity.cache.UserStateCache;
 import tg.bot.activity.common.enums.states.InformationAboutUsStateEnum;
+import tg.bot.activity.common.enums.states.StateEnum;
 import tg.bot.activity.model.UserState;
 import tg.bot.activity.model.entity.AboutUs;
 import tg.bot.activity.service.aboutUs.AboutUsService;

@@ -7,6 +7,7 @@ import tg.bot.activity.mapper.ActivityMapper;
 import tg.bot.activity.model.ActivityRequestParams;
 import tg.bot.activity.model.dto.tg.ActivityDto;
 import tg.bot.activity.model.entity.Activity;
+import tg.bot.activity.model.entity.Activity_;
 import tg.bot.activity.repository.ActivityRepository;
 import tg.bot.activity.repository.ScheduleRepository;
 import tg.bot.activity.repository.specification.ActivitySpecification;

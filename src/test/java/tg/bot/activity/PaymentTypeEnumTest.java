@@ -1,8 +1,8 @@
 package tg.bot.activity;
 
-import com.bot.sup.common.enums.PaymentTypeEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
+import tg.bot.activity.common.enums.PaymentTypeEnum;
 
 import java.util.Map;
 
