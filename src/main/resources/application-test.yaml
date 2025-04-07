@@ -11,8 +11,8 @@ telegram:
     aboutUs: https://tgsupbot-admin-dev.reliab.tech/#/aboutUs
     reviews: https://tgsupbot-admin-dev.reliab.tech/#/reviews
     infoAboutPayment: https://tgsupbot-admin-dev.reliab.tech/#/infoAboutPayment
-  botUsername: '@Dbydhd_bot'
-  botToken: 5713362745:AAFhdPygZuBXLPHKG3rtR8DaQyn2jOG7M3E
+  botUsername: '@TEST_USERNAME'
+  botToken: TEST_TOKEN
 integration:
   url:
     vkService: https://tgsupbot.reliab.tech/admin/api/vk/
