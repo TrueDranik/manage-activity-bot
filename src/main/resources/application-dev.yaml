@@ -11,8 +11,8 @@ telegram:
     aboutUs: https://tgsupbot-admin-dev.reliab.tech/#/aboutUs
     reviews: https://tgsupbot-admin-dev.reliab.tech/#/reviews
     infoAboutPayment: https://tgsupbot-admin-dev.reliab.tech/#/infoAboutPayment
-  botUsername: 'https://t.me/sup31AdminTest_bot'
-  botToken: 5896715348:AAH8qH5j8rJuovHVo3auHcru3rUFuiNTY7A
+  botUsername: 'SOME_USERNAME'
+  botToken: SOME_TOKEN
 
 ids:
   iconAlbumId: 11
